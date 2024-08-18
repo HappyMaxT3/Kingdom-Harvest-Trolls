@@ -1,33 +1,38 @@
 using UnityEngine;
 
-public class MapDrag : MonoBehaviour
+namespace Game
 {
-    public Camera mainCamera;  // Камера, через которую смотрим на карту
-    private Vector3 dragOrigin;  // Точка начала перетаскивания
-    private bool isDragging = false;  // Флаг перетаскивания
-
-    void Update()
+    public class MapDrag : MonoBehaviour
     {
-        // Начало перетаскивания при нажатии левой кнопки мыши
-        if (Input.GetMouseButtonDown(0))
-        {
-            dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            isDragging = true;
-        }
+        public Camera mainCamera;  // Камера, через которую смотрим на карту
+        private Vector3 dragOrigin;  // Точка начала перетаскивания
+        private bool isDragging = false;  // Флаг перетаскивания
 
-        // Завершение перетаскивания при отпускании левой кнопки мыши
-        if (Input.GetMouseButtonUp(0))
+        void Update()
         {
-            isDragging = false;
-        }
+            // Начало перетаскивания при нажатии левой кнопки мыши
+            if (Input.GetMouseButtonDown(0))
+            {
+                dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                isDragging = true;
+            }
 
-        // Перетаскивание карты
-        if (isDragging)
-        {
-            Vector3 currentMousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 difference = dragOrigin - currentMousePos;
+            // Завершение перетаскивания при отпускании левой кнопки мыши
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+            }
 
-            mainCamera.transform.position += difference;
+            // Перетаскивание карты
+            if (isDragging)
+            {
+                Vector3 currentMousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 difference = dragOrigin - currentMousePos;
+
+                mainCamera.transform.position += difference;
+            }
         }
     }
 }
+
+
