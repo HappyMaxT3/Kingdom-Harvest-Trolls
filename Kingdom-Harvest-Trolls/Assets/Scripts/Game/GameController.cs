@@ -12,16 +12,17 @@ public class GameController : MonoBehaviour
 
     public void NewCellOnClick(GameObject cell)
     {
-        Debug.Log(sprite);
+        //Debug.Log(sprite);
         sprite = cell.GetComponent<Image>().sprite;
         image.sprite = sprite;
-        Debug.Log(sprite);
+        //Debug.Log(sprite);
     }
 
     public void FieldCellOnClick(GameObject cell)
     {
         if (sprite != null)
         {
+            Debug.Log("CLICK");
             cell.GetComponent<Image>().sprite = sprite;
             sprite = null;
         }

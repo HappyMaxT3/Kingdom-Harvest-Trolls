@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 634652981}
   - component: {fileID: 634652980}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ChooseCellPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,7 +466,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 400, y: 130}
+  m_SizeDelta: {x: 330, y: 110}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &634652980
 MonoBehaviour:
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 75, y: 75}
   m_Spacing: {x: 30, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1041,6 +1041,7 @@ GameObject:
   - component: {fileID: 1602255462}
   - component: {fileID: 1602255463}
   - component: {fileID: 1602255464}
+  - component: {fileID: 1602255465}
   m_Layer: 5
   m_Name: FieldPanel
   m_TagString: Untagged
@@ -1065,7 +1066,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 422}
+  m_SizeDelta: {x: 900, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602255459
 MonoBehaviour:
@@ -1079,8 +1080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b4599e48902d345a50bc7b9773b808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 30
-  height: 14
+  width: 14
+  height: 7
   panel: {fileID: 1602255457}
   dark_cell_prefab: {fileID: 4600592899630422985, guid: c2606a89d75b15141826faababa61ca1, type: 3}
 --- !u!114 &1602255460
@@ -1141,7 +1142,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 30, y: 30}
+  m_CellSize: {x: 64, y: 64}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1687,6 +1688,20 @@ MonoBehaviour:
   cell1: {fileID: 268692880}
   cell2: {fileID: 1717729558}
   cell3: {fileID: 572548335}
+--- !u!114 &1602255465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602255457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7933e20c4eb2043458324a3a7f4d061a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1315321605}
+  zoom: 0
 --- !u!224 &1717729555 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7178303493892214374, guid: aaaec83f757a4844c9191fc35a5154c3, type: 3}

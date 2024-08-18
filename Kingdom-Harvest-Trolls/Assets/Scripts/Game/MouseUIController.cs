@@ -10,7 +10,7 @@ public class MouseUIController : MonoBehaviour
     public float minZoom;
     public float maxZoom;
 
-    float zoom;
+    float zoom = 1f;
 
     public GameObject Panel;
 
@@ -27,7 +27,8 @@ public class MouseUIController : MonoBehaviour
     {
         Zoom();
         zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
-        GetComponent<CanvasScaler>().scaleFactor = zoom;
+        //GetComponent<CanvasScaler>().scaleFactor = zoom;
+        Panel.GetComponent<RectTransform>().localScale = new Vector3(zoom, zoom, 1);
 
         startPosition = Input.mousePosition;
     }
