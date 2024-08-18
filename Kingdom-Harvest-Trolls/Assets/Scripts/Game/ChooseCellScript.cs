@@ -4,17 +4,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ChooseCellScript : MonoBehaviour, IPointerClickHandler
+
+namespace Game
 {
-    GameController gameController;
-
-    private void Start()
+    public class ChooseCellScript : MonoBehaviour, IPointerClickHandler
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
-    }
+        GameController gameController;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        gameController.NewCellOnClick(transform.gameObject);
+        private void Start()
+        {
+            gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            gameController.NewCellOnClick(transform.gameObject);
+        }
     }
 }
+
