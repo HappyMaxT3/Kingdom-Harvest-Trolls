@@ -123,6 +123,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &295987255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 295987256}
+  - component: {fileID: 295987257}
+  - component: {fileID: 295987258}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &295987256
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295987255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 634652979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &295987257
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295987255}
+  m_CullTransparentMesh: 1
+--- !u!114 &295987258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295987255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &478393025
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +229,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1602255458}
+  - {fileID: 634652979}
   m_Father: {fileID: 582503121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -318,6 +394,109 @@ MonoBehaviour:
   minZoom: 1
   maxZoom: 10
   Panel: {fileID: 1602255457}
+--- !u!1 &634652978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634652979}
+  - component: {fileID: 634652982}
+  - component: {fileID: 634652981}
+  - component: {fileID: 634652980}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &634652979
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634652978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 295987256}
+  - {fileID: 1178737238}
+  - {fileID: 977252770}
+  m_Father: {fileID: 478393026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 400, y: 130}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &634652980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634652978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 30, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &634652981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634652978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &634652982
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634652978}
+  m_CullTransparentMesh: 1
 --- !u!1 &835152327
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +565,156 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &977252767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 977252770}
+  - component: {fileID: 977252769}
+  - component: {fileID: 977252768}
+  m_Layer: 5
+  m_Name: Image (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &977252768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977252767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &977252769
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977252767}
+  m_CullTransparentMesh: 1
+--- !u!224 &977252770
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977252767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 634652979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1178737237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178737238}
+  - component: {fileID: 1178737239}
+  - component: {fileID: 1178737240}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1178737238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178737237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 634652979}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1178737239
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178737237}
+  m_CullTransparentMesh: 1
+--- !u!114 &1178737240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178737237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1315321602
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4315140ef19e32c4f9eca770c84c8058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cells:
+  all_cells:
   - sprite: {fileID: -1403521123, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: grass
     is_castle: 0
@@ -711,22 +1040,22 @@ MonoBehaviour:
     level: 0
     count_of_road: 0
     is_just_road: 0
-  - sprite: {fileID: 49876147, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 0
-    coin_per_time: 5
-    wheat_per_time: 0
-    level: 1
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: -550783611, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: wheat
+  - sprite: {fileID: 1021004755, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: half_village
     is_castle: 0
     is_destroyed: 0
+    coin_per_time: 2
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 154368077, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: half_village
+    is_castle: 0
+    is_destroyed: 1
     coin_per_time: 0
     wheat_per_time: 0
-    level: 1
+    level: 0
     count_of_road: 0
     is_just_road: 0
   - sprite: {fileID: 2041666101, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
@@ -738,11 +1067,92 @@ MonoBehaviour:
     level: 0
     count_of_road: 2
     is_just_road: 0
-  - sprite: {fileID: 1021004755, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+  - sprite: {fileID: -1626971353, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: half_village
     is_castle: 0
+    is_destroyed: 1
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 2
+    is_just_road: 0
+  - sprite: {fileID: 1759783421, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 1
     is_destroyed: 0
-    coin_per_time: 2
+    coin_per_time: 15
+    wheat_per_time: 0
+    level: 2
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: 191766238, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 1
+    is_destroyed: 1
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 2
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: -209909509, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 1
+    is_destroyed: 0
+    coin_per_time: 10
+    wheat_per_time: 0
+    level: 1
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: -1274796333, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 1
+    is_destroyed: 1
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 1
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: 49876147, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 1
+    is_destroyed: 0
+    coin_per_time: 5
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: -795599282, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 1
+    is_destroyed: 1
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: 2002643159, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: castle
+    is_castle: 0
+    is_destroyed: 1
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: -1
+    count_of_road: 1
+    is_just_road: 0
+  - sprite: {fileID: -23118517, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: quater_village
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 1
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: -517300926, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: quater_village
+    is_castle: 0
+    is_destroyed: 1
+    coin_per_time: 0
     wheat_per_time: 0
     level: 0
     count_of_road: 0
@@ -756,28 +1166,10 @@ MonoBehaviour:
     level: 0
     count_of_road: 2
     is_just_road: 1
-  - sprite: {fileID: -23118517, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+  - sprite: {fileID: -1732615342, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: quater_village
     is_castle: 0
-    is_destroyed: 0
-    coin_per_time: 1
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-  - sprite: {fileID: 1417534210, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: road
-    is_castle: 0
-    is_destroyed: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 3
-    is_just_road: 1
-  - sprite: {fileID: 964589688, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: road
-    is_castle: 0
-    is_destroyed: 0
+    is_destroyed: 1
     coin_per_time: 0
     wheat_per_time: 0
     level: 0
@@ -792,6 +1184,15 @@ MonoBehaviour:
     level: 0
     count_of_road: 4
     is_just_road: 1
+  - sprite: {fileID: 1417534210, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: road
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 3
+    is_just_road: 1
   - sprite: {fileID: -1169664318, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: road
     is_castle: 0
@@ -801,86 +1202,23 @@ MonoBehaviour:
     level: 0
     count_of_road: 2
     is_just_road: 1
-  - sprite: {fileID: 191766238, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 1
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 3
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: 1759783421, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 0
-    coin_per_time: 15
-    wheat_per_time: 0
-    level: 3
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: -209909509, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 0
-    coin_per_time: 10
-    wheat_per_time: 0
-    level: 2
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: -1274796333, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 1
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 2
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: -795599282, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 1
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 1
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: 2002643159, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: castle
-    is_castle: 1
-    is_destroyed: 1
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: -1
-    count_of_road: 1
-    is_just_road: 0
-  - sprite: {fileID: -517300926, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: quater_village
+  - sprite: {fileID: 964589688, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: road
     is_castle: 0
-    is_destroyed: 1
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-  - sprite: {fileID: -1732615342, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: quater_village
-    is_castle: 0
-    is_destroyed: 1
+    is_destroyed: 0
     coin_per_time: 0
     wheat_per_time: 0
     level: 0
     count_of_road: 2
     is_just_road: 1
-  - sprite: {fileID: -1626971353, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: half_village
+  - sprite: {fileID: -550783611, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+    type: wheat
     is_castle: 0
-    is_destroyed: 1
+    is_destroyed: 0
     coin_per_time: 0
     wheat_per_time: 0
     level: 0
-    count_of_road: 2
+    count_of_road: 0
     is_just_road: 0
   - sprite: {fileID: 1670284822, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: wheat
@@ -888,7 +1226,7 @@ MonoBehaviour:
     is_destroyed: 0
     coin_per_time: 0
     wheat_per_time: 2
-    level: 2
+    level: 1
     count_of_road: 0
     is_just_road: 0
   - sprite: {fileID: -282866103, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
@@ -897,7 +1235,7 @@ MonoBehaviour:
     is_destroyed: 0
     coin_per_time: 0
     wheat_per_time: 10
-    level: 3
+    level: 2
     count_of_road: 0
     is_just_road: 0
   - sprite: {fileID: -2074874292, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
@@ -909,15 +1247,272 @@ MonoBehaviour:
     level: -1
     count_of_road: 0
     is_just_road: 0
-  - sprite: {fileID: 154368077, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
-    type: half_village
+  choose_cells:
+  - sprite: {fileID: 0}
+    type: 
     is_castle: 0
-    is_destroyed: 1
+    is_destroyed: 0
     coin_per_time: 0
     wheat_per_time: 0
     level: 0
     count_of_road: 0
     is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  cellChoose:
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  - sprite: {fileID: 0}
+    type: 
+    is_castle: 0
+    is_destroyed: 0
+    coin_per_time: 0
+    wheat_per_time: 0
+    level: 0
+    count_of_road: 0
+    is_just_road: 0
+  cell1: {fileID: 295987258}
+  cell2: {fileID: 1178737240}
+  cell3: {fileID: 977252768}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

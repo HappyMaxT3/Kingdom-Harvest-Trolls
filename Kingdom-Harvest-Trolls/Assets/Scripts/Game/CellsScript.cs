@@ -30,10 +30,7 @@ public struct Cell
 
 public class CellsScript : MonoBehaviour
 {
-
-    public GameObject cellChoosePanel;
-
-    public Cell[] all_cells;
+    public Cell[] all_cells = new Cell[26];
     public Cell[] choose_cells = new Cell[26];
 
     public Cell[] cellChoose = new Cell[3];
