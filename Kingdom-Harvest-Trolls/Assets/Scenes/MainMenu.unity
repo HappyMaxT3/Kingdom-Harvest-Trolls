@@ -936,6 +936,7 @@ GameObject:
   - component: {fileID: 368112300}
   - component: {fileID: 368112299}
   - component: {fileID: 368112298}
+  - component: {fileID: 368112301}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -1063,6 +1064,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368112296}
   m_CullTransparentMesh: 1
+--- !u!114 &368112301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368112296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &384859681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1092,7 @@ GameObject:
   - component: {fileID: 384859684}
   - component: {fileID: 384859683}
   - component: {fileID: 384859686}
+  - component: {fileID: 384859687}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -1210,6 +1227,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickSound: {fileID: 8300000, guid: 0ef6a89c5be208e448d5d78ca8c91e13, type: 3}
+--- !u!114 &384859687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384859681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &391251777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1389,7 @@ GameObject:
   - component: {fileID: 408259173}
   - component: {fileID: 408259172}
   - component: {fileID: 408259175}
+  - component: {fileID: 408259176}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1491,6 +1524,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickSound: {fileID: 8300000, guid: 0ef6a89c5be208e448d5d78ca8c91e13, type: 3}
+--- !u!114 &408259176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408259170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &476990136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,6 +2782,7 @@ GameObject:
   - component: {fileID: 755133800}
   - component: {fileID: 755133799}
   - component: {fileID: 755133798}
+  - component: {fileID: 755133801}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -2861,6 +2910,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755133796}
   m_CullTransparentMesh: 1
+--- !u!114 &755133801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755133796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &771953705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,8 +2993,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2036237996}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3004,8 +3068,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1527122717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3279,6 +3343,7 @@ GameObject:
   - component: {fileID: 952333819}
   - component: {fileID: 952333818}
   - component: {fileID: 952333817}
+  - component: {fileID: 952333820}
   m_Layer: 5
   m_Name: Dropdown (1)
   m_TagString: Untagged
@@ -3406,6 +3471,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952333815}
   m_CullTransparentMesh: 1
+--- !u!114 &952333820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952333815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &965482805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,13 +4062,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 916257873}
-        m_TargetAssemblyTypeName: Game.AudioManager, Assembly-CSharp
-        m_MethodName: OnMasterVolumeChanged
+      - m_Target: {fileID: 1089380253}
+        m_TargetAssemblyTypeName: Game.Options.AudioOptions, Assembly-CSharp
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4118,6 +4198,7 @@ GameObject:
   - component: {fileID: 1089380249}
   - component: {fileID: 1089380252}
   - component: {fileID: 1089380253}
+  - component: {fileID: 1089380254}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -4252,6 +4333,21 @@ MonoBehaviour:
   _masterVolume: {fileID: 1064003835}
   _sfxVolume: {fileID: 1602729178}
   _musicVolume: {fileID: 1426385149}
+--- !u!114 &1089380254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089380245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 10, y: -10}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1224388364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,6 +4775,7 @@ GameObject:
   - component: {fileID: 1310011375}
   - component: {fileID: 1310011374}
   - component: {fileID: 1310011377}
+  - component: {fileID: 1310011378}
   m_Layer: 5
   m_Name: AcceptButton
   m_TagString: Untagged
@@ -4813,6 +4910,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickSound: {fileID: 8300000, guid: 0ef6a89c5be208e448d5d78ca8c91e13, type: 3}
+--- !u!114 &1310011378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310011372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1317780253
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,7 +5269,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5427,7 +5539,7 @@ RectTransform:
   m_Father: {fileID: 363409014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5877,7 +5989,7 @@ RectTransform:
   m_Father: {fileID: 771953706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5989,7 +6101,7 @@ RectTransform:
   m_Father: {fileID: 635334022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6192,7 +6304,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6892,6 +7004,7 @@ GameObject:
   - component: {fileID: 1820265437}
   - component: {fileID: 1820265436}
   - component: {fileID: 1820265439}
+  - component: {fileID: 1820265440}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -7026,6 +7139,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clickSound: {fileID: 8300000, guid: 0ef6a89c5be208e448d5d78ca8c91e13, type: 3}
+--- !u!114 &1820265440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820265434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 0
 --- !u!1 &1831061362
 GameObject:
   m_ObjectHideFlags: 0
@@ -7303,8 +7431,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1505412046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
