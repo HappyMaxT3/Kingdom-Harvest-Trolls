@@ -61,7 +61,7 @@ public class CellsScript : MonoBehaviour
                     all_cells[i].is_just_road
                 */
             }
-            Debug.Log(choose_cells[5].type);
+            //Debug.Log(choose_cells[5].type);
 
             RandomCell();
         }
@@ -72,7 +72,7 @@ public class CellsScript : MonoBehaviour
         for (int i = 0; i < cellChoose.Length; i++)
         {
             cellChoose[i] = choose_cells[random.Next(0, choose_cells.Length)];
-            Debug.Log(cellChoose[i].type);
+            //Debug.Log(cellChoose[i].type);
         }
 
         cell1.sprite = cellChoose[0].sprite;
