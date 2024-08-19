@@ -25,11 +25,6 @@ public class MouseUIController : MonoBehaviour
     {
         startPosition = Panel.transform.position;
 
-        canvas = gameObject.GetComponent<Canvas>();
-
-        RectTransform canvasRectTransform = canvas.GetComponent<RectTransform>();
-        canvasCenter = new Vector3(canvasRectTransform.rect.width / 2, canvasRectTransform.rect.height / 2, 0);
-
         //lastPanelPosition = canvasCenter;
 
         Debug.Log($"{canvasCenter.x} {canvasCenter.y}");
@@ -80,7 +75,12 @@ public class MouseUIController : MonoBehaviour
 
     private void RestrictPanelMovement()
     {
+        canvas = gameObject.GetComponent<Canvas>();
+
+        RectTransform canvasRectTransform = canvas.GetComponent<RectTransform>();
+        canvasCenter = new Vector3(canvasRectTransform.rect.width / 2, canvasRectTransform.rect.height / 2, 0);
         // Получаем RectTransform панели и Canvas
+
         RectTransform panelRectTransform = Panel.GetComponent<RectTransform>();
 
         // Получаем текущую позицию Panel

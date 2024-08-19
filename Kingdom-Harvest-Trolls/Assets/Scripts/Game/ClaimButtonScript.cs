@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Game
 {
-    public class AddCellScript : MonoBehaviour, IPointerClickHandler
+    public class ClaimButtonScript : MonoBehaviour, IPointerClickHandler
     {
         public int index_i;
         public int index_j;
@@ -21,7 +21,7 @@ namespace Game
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            gameController.FieldCellOnClick(transform.gameObject, index_i, index_j);
+            gameController.IncreaseAmount();
         }
     }
 }
