@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
         fieldScript = Field.GetComponent<FieldScript>();
         cellsScript = Field.GetComponent<CellsScript>();
 
-        sec_0_60 = 0;
+        sec_0_60 = 60;
         InvokeRepeating("Timer", 1f, 1f);
     }
 
@@ -167,7 +167,8 @@ public class GameController : MonoBehaviour
 
     private void Timer()
     {
-        sec_0_60 = (sec_0_60 + 1) % 60;
+        sec_0_60 = sec_0_60 - 1;
+        if (sec_0_60 == -1) sec_0_60 = 60;
         timer.text = sec_0_60.ToString();
     }
 }

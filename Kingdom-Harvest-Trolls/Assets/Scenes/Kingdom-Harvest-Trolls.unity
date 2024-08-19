@@ -466,6 +466,140 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8882113484997822800, guid: d588843530a0711459887af0b1bbb1f9, type: 3}
   m_PrefabInstance: {fileID: 489779695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &359150305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 359150306}
+  - component: {fileID: 359150307}
+  - component: {fileID: 359150308}
+  m_Layer: 5
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &359150306
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359150305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1164917482}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 120, y: 25}
+  m_SizeDelta: {x: 75, y: 40}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &359150307
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359150305}
+  m_CullTransparentMesh: 1
+--- !u!114 &359150308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359150305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 60
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 66933c571e73d86429458aa396401872, type: 2}
+  m_sharedMaterial: {fileID: -2543673949282336241, guid: 66933c571e73d86429458aa396401872, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &395586568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,8 +1579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 5
-  minZoom: 1
-  maxZoom: 10
+  minZoom: 0.5
+  maxZoom: 7
   Panel: {fileID: 1602255457}
 --- !u!1 &634652978
 GameObject:
@@ -1933,7 +2067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1164917482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1949,6 +2083,7 @@ RectTransform:
   - {fileID: 254737417}
   - {fileID: 58672348}
   - {fileID: 553670973}
+  - {fileID: 359150306}
   - {fileID: 460068860}
   - {fileID: 1396253373}
   m_Father: {fileID: 478393026}
@@ -2544,6 +2679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b4599e48902d345a50bc7b9773b808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameController: {fileID: 1763886532}
   interval: 60
   width: 20
   height: 10
@@ -2660,7 +2796,8 @@ MonoBehaviour:
     right: grass
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -2676,7 +2813,8 @@ MonoBehaviour:
     right: grass
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -2692,7 +2830,8 @@ MonoBehaviour:
     right: grass
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -2708,7 +2847,8 @@ MonoBehaviour:
     right: village
     up: village
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 2
@@ -2724,7 +2864,8 @@ MonoBehaviour:
     right: village
     up: village
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 2
@@ -2740,7 +2881,8 @@ MonoBehaviour:
     right: road
     up: village
     left: village
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 2
@@ -2756,7 +2898,8 @@ MonoBehaviour:
     right: road
     up: village
     left: village
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 2
@@ -2772,7 +2915,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 15
@@ -2788,7 +2932,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 15
@@ -2804,7 +2949,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 10
@@ -2820,7 +2966,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 10
@@ -2836,7 +2983,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 5
@@ -2852,7 +3000,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 5
@@ -2868,7 +3017,8 @@ MonoBehaviour:
     right: castle
     up: castle
     left: castle
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 0
@@ -2884,7 +3034,8 @@ MonoBehaviour:
     right: grass
     up: grass
     left: village
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 1
@@ -2900,7 +3051,8 @@ MonoBehaviour:
     right: grass
     up: grass
     left: village
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 1
@@ -2916,7 +3068,8 @@ MonoBehaviour:
     right: road
     up: grass
     left: road
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 1
@@ -2932,7 +3085,8 @@ MonoBehaviour:
     right: road
     up: grass
     left: road
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 1
@@ -2948,7 +3102,8 @@ MonoBehaviour:
     right: road
     up: road
     left: road
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -2964,7 +3119,8 @@ MonoBehaviour:
     right: road
     up: road
     left: road
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -2980,7 +3136,8 @@ MonoBehaviour:
     right: grass
     up: road
     left: road
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -2996,7 +3153,8 @@ MonoBehaviour:
     right: road
     up: grass
     left: road
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 0
     coin_per_time: 0
@@ -3012,7 +3170,8 @@ MonoBehaviour:
     right: wheat
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 0
@@ -3028,7 +3187,8 @@ MonoBehaviour:
     right: wheat
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 0
@@ -3044,7 +3204,8 @@ MonoBehaviour:
     right: wheat
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 10
     is_destroyed: 0
     coin_per_time: 0
@@ -3060,7 +3221,8 @@ MonoBehaviour:
     right: wheat
     up: grass
     left: grass
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: -1
     is_destroyed: 1
     coin_per_time: 0
@@ -3077,7 +3239,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3093,7 +3256,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3109,7 +3273,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3125,7 +3290,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3141,7 +3307,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3157,7 +3324,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3173,7 +3341,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3189,7 +3358,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3205,7 +3375,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3221,7 +3392,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3237,7 +3409,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3253,7 +3426,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3269,7 +3443,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3285,7 +3460,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3301,7 +3477,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3317,7 +3494,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3333,7 +3511,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3349,7 +3528,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3365,7 +3545,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3381,7 +3562,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3397,7 +3579,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3413,7 +3596,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3429,7 +3613,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3445,7 +3630,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3461,7 +3647,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3477,7 +3664,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3494,7 +3682,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3510,7 +3699,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3526,7 +3716,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
@@ -3720,9 +3911,13 @@ MonoBehaviour:
   coin_amount: 0
   wheat_amount: 0
   knight_amount: 0
+  coin_amount_text: {fileID: 1631038420}
+  wheat_amount_text: {fileID: 446670007}
+  knight_amount_text: {fileID: 432650956}
   Field: {fileID: 1602255457}
   optionPanel: {fileID: 52726345}
   cellPressedPanel: {fileID: 1164917481}
+  timer: {fileID: 359150308}
   image: {fileID: 395586570}
   new_cell:
     sprite: {fileID: 0}
@@ -3732,7 +3927,8 @@ MonoBehaviour:
     right: 
     up: 
     left: 
-    amount: 0
+    coin_amount: 0
+    wheat_amount: 0
     interval: 0
     is_destroyed: 0
     coin_per_time: 0
