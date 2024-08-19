@@ -17,6 +17,7 @@ namespace Game
         public int wheat_amount;
         public int interval;
         public bool is_destroyed;
+        public int cost_of_upgrate;
         public int coin_per_time;
         public int wheat_per_time;
         public int level;
@@ -35,6 +36,7 @@ namespace Game
                     int _wheat_amount,
                     int _interval,
                     bool _is_destroyed,
+                    int _cost_of_upgrate,
                     int _coin_per_time,
                     int _wheat_per_time,
                     int _level,
@@ -53,6 +55,7 @@ namespace Game
             wheat_amount = _wheat_amount;
             interval = _interval;
             is_destroyed = _is_destroyed;
+            cost_of_upgrate = _cost_of_upgrate;
             coin_per_time = _coin_per_time;
             wheat_per_time = _wheat_per_time;
             level = _level;

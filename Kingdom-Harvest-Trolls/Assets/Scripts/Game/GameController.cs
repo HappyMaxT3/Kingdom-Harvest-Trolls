@@ -22,11 +22,20 @@ public class GameController : MonoBehaviour
     public GameObject Field;
 
     Sprite sprite = null;
+    public Sprite empty_sprite;
 
     public GameObject optionPanel;
     public GameObject cellPressedPanel;
 
-    public TextMeshProUGUI timer;
+    public GameObject OkayPanel;
+    public GameObject CastleOkayPanel;
+    public GameObject NotOkayPanel;
+    public GameObject UpgrateCastlePanel;
+    public GameObject BuyKnightsPanel;
+    public GameObject NotEnougthPanel;
+
+    public TextMeshProUGUI timer1;
+    public TextMeshProUGUI timer2;
 
     private int sec_0_60;
 
@@ -39,6 +48,18 @@ public class GameController : MonoBehaviour
     {
         fieldScript = Field.GetComponent<FieldScript>();
         cellsScript = Field.GetComponent<CellsScript>();
+
+        CloseBuyKnightsPanel();
+        CloseCastleOkayPanel();
+        CloseCellPressedPanel();
+        CloseNotOkayPanel();
+        CloseOkayPanel();
+        CloseOptionPanel();
+        CloseUpgrateCastlePanel();
+        CloseNotEnougthPanel();
+
+        IncreaseCoinAmount(0);
+        IncreaseWheatAmount(0);
 
         sec_0_60 = 60;
         InvokeRepeating("Timer", 1f, 1f);
@@ -76,7 +97,7 @@ public class GameController : MonoBehaviour
 
             sprite = null;
             new_cell.rotation = 0;
-            image.sprite = null;
+            image.sprite = empty_sprite;
             image.transform.localEulerAngles = new Vector3(0, 0, 0);
 
             cellsScript.RandomCell();
@@ -86,7 +107,7 @@ public class GameController : MonoBehaviour
             fieldScript.OnCellClick(index_i, index_j);
             if ((fieldScript.cells[index_i, index_j].coin_per_time > 0) || (fieldScript.cells[index_i, index_j].wheat_per_time > 0))
             {
-                OpenCellPressedPanel();
+                OpenCellPressedPanel(index_i, index_j);
                 UpdateClaimPanel();
             }
         }
@@ -136,13 +157,43 @@ public class GameController : MonoBehaviour
     public void IncreaseCoinAmount(int amount)
     {
         coin_amount += amount;
-        coin_amount_text.text = coin_amount.ToString();
+
+        if (coin_amount < 0)
+        {
+            coin_amount = 0;
+            OpenNotEnougthPanel();
+        }
+        else
+        {
+            coin_amount_text.text = coin_amount.ToString();
+        }
     }
 
     public void IncreaseWheatAmount(int amount)
     {
         wheat_amount += amount;
         wheat_amount_text.text = wheat_amount.ToString();
+    }
+
+    public void OpenCellPressedPanel(int index_i, int index_j)
+    {
+        cellPressedPanel.gameObject.SetActive(true);
+
+        if (fieldScript.cells[index_i, index_j].is_destroyed == true)
+        {
+            OpenNotOkayPanel();
+        }
+        else
+        {
+            if (fieldScript.cells[index_i, index_j].type == "castle")
+            {
+                OpenCastleOkayPanel();
+            }
+            else
+            {
+                OpenOkayPanel();
+            }
+        }
     }
 
     public void OpenOptionPanel()
@@ -155,20 +206,143 @@ public class GameController : MonoBehaviour
         optionPanel.gameObject.SetActive(false);
     }
 
-    public void OpenCellPressedPanel()
-    {
-        cellPressedPanel.gameObject.SetActive(true);
-    }
-
     public void CloseCellPressedPanel()
     {
+        CloseBuyKnightsPanel();
+        CloseCastleOkayPanel();
+        CloseNotOkayPanel();
+        CloseOkayPanel();
+        CloseUpgrateCastlePanel();
+
         cellPressedPanel.gameObject.SetActive(false);
+    }
+
+    public void OpenOkayPanel()
+    {
+        OkayPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseOkayPanel()
+    {
+        OkayPanel.gameObject.SetActive(false);
+    }
+
+    public void OpenCastleOkayPanel()
+    {
+        CastleOkayPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseCastleOkayPanel()
+    {
+        CastleOkayPanel.gameObject.SetActive(false);
+    }
+
+    public void OpenNotOkayPanel()
+    {
+        NotOkayPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseNotOkayPanel()
+    {
+        NotOkayPanel.gameObject.SetActive(false);
+    }
+
+    public void OpenBuyKnightsPanel()
+    {
+        BuyKnightsPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseBuyKnightsPanel()
+    {
+        BuyKnightsPanel.gameObject.SetActive(false);
+    }
+
+    public void OpenUpgrateCastlePanel()
+    {
+        UpgrateCastlePanel.gameObject.SetActive(true);
+
+        UpdateUpgratePanelInfo();
+    }
+
+    public void UpgrateCastle()
+    {
+        int next_lvl = fieldScript.cells[x, y].level + 1;
+        Cell new_castle = fieldScript.FindCellByType("castle", next_lvl, 1, false);
+
+        if (coin_amount - new_castle.cost_of_upgrate < 0)
+        {
+            OpenNotEnougthPanel();
+        }
+        else
+        {
+            IncreaseCoinAmount(-new_castle.cost_of_upgrate);
+            UpgrateCellInfo(new_castle);
+
+            UpdateUpgratePanelInfo();
+        }
+    }
+
+    public void UpdateUpgratePanelInfo()
+    {
+        UpgrateCastlePanelScript script = UpgrateCastlePanel.GetComponent<UpgrateCastlePanelScript>();
+
+        int castle_current_lvl = fieldScript.cells[x, y].level + 1;
+        int current_coin_per_time = fieldScript.cells[x, y].coin_per_time;
+        Cell new_castle = fieldScript.FindCellByType("castle", castle_current_lvl, 1, false);
+        int cost = new_castle.cost_of_upgrate;
+
+        if (fieldScript.cells[x, y].level < 2)
+        {
+
+            script.level_upgrate.text = castle_current_lvl.ToString() + " -> " + (castle_current_lvl + 1).ToString();
+
+            int next_coin_per_time = fieldScript.FindCellByType("castle", castle_current_lvl, 1, false).coin_per_time;
+            script.coin_upgrate.text = current_coin_per_time.ToString() + " -> " + next_coin_per_time.ToString();
+
+            //KNIGHTS
+
+            script.cost.text = cost.ToString();
+        }
+        else
+        {
+            script.level_upgrate.text = castle_current_lvl.ToString();
+
+            script.coin_upgrate.text = current_coin_per_time.ToString();
+
+            //KNIGHTS
+
+            script.cost.text = cost.ToString();
+
+            script.upgrate_button.gameObject.SetActive(false);
+        }
+    }
+
+    public void CloseUpgrateCastlePanel()
+    {
+        UpgrateCastlePanel.gameObject.SetActive(false);
+    }
+
+    public void UpgrateCellInfo(Cell new_cell)
+    {
+        fieldScript.cells[x, y] = new_cell;
+        fieldScript.dark_cells[x, y].GetComponent<Image>().sprite = new_cell.sprite;
+    }
+
+    public void OpenNotEnougthPanel()
+    {
+        NotEnougthPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseNotEnougthPanel()
+    {
+        NotEnougthPanel.gameObject.SetActive(false);
     }
 
     private void Timer()
     {
         sec_0_60 = sec_0_60 - 1;
         if (sec_0_60 == -1) sec_0_60 = 60;
-        timer.text = sec_0_60.ToString();
+        timer1.text = sec_0_60.ToString();
+        timer2.text = sec_0_60.ToString();
     }
 }
