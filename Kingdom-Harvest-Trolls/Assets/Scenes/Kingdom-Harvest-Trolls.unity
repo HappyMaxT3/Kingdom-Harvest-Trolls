@@ -793,7 +793,7 @@ MonoBehaviour:
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 40, y: 40}
+  m_CellSize: {x: 150, y: 40}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -4175,6 +4175,34 @@ PrefabInstance:
     - target: {fileID: 266840337086809328, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
       propertyPath: m_fontSizeBase
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1763886533}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseAmount
+      objectReference: {fileID: 0}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 840704593009556763, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7919991670970095671, guid: a569a87c85a6cfe45a39e7c34cbc74cf, type: 3}
       propertyPath: m_Name
