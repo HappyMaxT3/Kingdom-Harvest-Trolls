@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
 {
     Sprite sprite = null;
 
+    public GameObject optionPanel;
+
     public Image image;
 
     public void NewCellOnClick(GameObject cell)
@@ -26,5 +28,15 @@ public class GameController : MonoBehaviour
             cell.GetComponent<Image>().sprite = sprite;
             sprite = null;
         }
+    }
+
+    public void OpenOptionPanel()
+    {
+        optionPanel.gameObject.SetActive(true);
+    }
+
+    public void CloseOptionPanel()
+    {
+        optionPanel.gameObject.SetActive(false);
     }
 }

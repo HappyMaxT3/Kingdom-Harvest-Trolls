@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MouseUIController : MonoBehaviour
 {
+    private Canvas canvas;
+
     public float cameraSpeed;
 
     public float minZoom;
@@ -15,12 +17,22 @@ public class MouseUIController : MonoBehaviour
     public GameObject Panel;
 
     private Vector3 startPosition;
-
     private Vector3 cursorPosition;
+    //private Vector3 lastPanelPosition;
+    private Vector3 canvasCenter;
 
     private void Start()
     {
         startPosition = Panel.transform.position;
+
+        canvas = gameObject.GetComponent<Canvas>();
+
+        RectTransform canvasRectTransform = canvas.GetComponent<RectTransform>();
+        canvasCenter = new Vector3(canvasRectTransform.rect.width / 2, canvasRectTransform.rect.height / 2, 0);
+
+        //lastPanelPosition = canvasCenter;
+
+        Debug.Log($"{canvasCenter.x} {canvasCenter.y}");
     }
 
     private void Update()
@@ -31,6 +43,9 @@ public class MouseUIController : MonoBehaviour
         Panel.GetComponent<RectTransform>().localScale = new Vector3(zoom, zoom, 1);
 
         startPosition = Input.mousePosition;
+
+        RestrictPanelMovement();
+        //lastPanelPosition = Panel.transform.position;
     }
 
     void Zoom()
@@ -61,5 +76,36 @@ public class MouseUIController : MonoBehaviour
             0
         );
         startPosition = Input.mousePosition;
+    }
+
+    private void RestrictPanelMovement()
+    {
+        // Получаем RectTransform панели и Canvas
+        RectTransform panelRectTransform = Panel.GetComponent<RectTransform>();
+
+        // Получаем текущую позицию Panel
+        Vector3 panelPosition = Panel.transform.position;
+
+        // Проверяем, выходит ли центр Canvas за пределы Panel
+        if (Mathf.Abs(canvasCenter.x - panelPosition.x) > panelRectTransform.rect.width * zoom / 2) 
+        {
+            float new_x = Mathf.Abs(canvasCenter.x - panelPosition.x) - panelRectTransform.rect.width * zoom / 2;
+            new_x *= (canvasCenter.x - panelPosition.x > 0) ? (1) : (-1);
+            Panel.transform.position = new Vector3(
+                Panel.transform.position.x + new_x,
+                Panel.transform.position.y,
+                0
+            );
+        }
+        if (Mathf.Abs(canvasCenter.y - panelPosition.y) > panelRectTransform.rect.height * zoom / 2)
+        {
+            float new_y = Mathf.Abs(canvasCenter.y - panelPosition.y) - panelRectTransform.rect.height * zoom / 2;
+            new_y *= (canvasCenter.y - panelPosition.y > 0) ? (1) : (-1);
+            Panel.transform.position = new Vector3(
+                Panel.transform.position.x,
+                Panel.transform.position.y + new_y,
+                0
+            );
+        }
     }
 }
