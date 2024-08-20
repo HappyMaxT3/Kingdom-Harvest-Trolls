@@ -59,7 +59,13 @@ public class GameController : MonoBehaviour
     private int x, y;
 
     private string not_enougth = "My lord, you do not have enougth of materials to do the action.";
-    private string greeting = "Greetings, my king!";
+
+    private string greeting1 = "Greetings, my king! I'm your Sycophant and I will assist you! You, my king, must defend the kingdom from trolls and expand it!";
+    private string greeting2 = "To the right of the map, there is a panel displating the kingdom's resources. You can choose multipple cards for your kingdom and rotate it for the best match..!.";
+    private string greeting3 = "Castles bring you gold and with this gold and wheat you can hire knight. So, be wise, my king! Fill every cell on the map to win.";
+
+    private string[] greetings = new string[3];
+    private int current_greeting = 0;
 
     private bool is_win = false;
     private bool is_lose = false;
@@ -72,6 +78,10 @@ public class GameController : MonoBehaviour
         cellsScript = Field.GetComponent<CellsScript>();
 
         free_cells_amount = fieldScript.width * fieldScript.height - 4;
+
+        greetings[0] = greeting1;
+        greetings[1] = greeting2;
+        greetings[2] = greeting3;
 
         CloseBuyKnightsPanel();
         CloseCastleOkayPanel();
@@ -94,6 +104,15 @@ public class GameController : MonoBehaviour
 
         sec_0_60 = 60;
         InvokeRepeating("Timer", 1f, 1f);
+    }
+
+    private void Update()
+    {
+        if ((Dude.active == false) && (current_greeting < greetings.Length))
+        {
+            OpenDude(greetings[current_greeting]);
+            current_greeting++;
+        }
     }
 
     public void NewCellOnClick(GameObject cell)
