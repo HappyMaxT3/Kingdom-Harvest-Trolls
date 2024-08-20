@@ -85,8 +85,6 @@ public class GameController : MonoBehaviour
         WinPanel.gameObject.SetActive(false);
         LosePanel.gameObject.SetActive(false);
 
-        OpenDude(greeting);
-
         ClosingOfBuyingANewCell(true);
         costOfCell.text = cost_of_new_cell.ToString();
 
