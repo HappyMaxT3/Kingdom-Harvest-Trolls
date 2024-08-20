@@ -7,6 +7,8 @@ TagManager:
   - Knight
   - Troll
   - Canvas
+  - KnightSword
+  - TrollSword
   layers:
   - Default
   - TransparentFX

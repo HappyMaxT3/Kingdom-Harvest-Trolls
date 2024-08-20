@@ -1,9 +1,8 @@
-using Game;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightController : MonoBehaviour
+public class TrollController : MonoBehaviour
 {
     private GameObject target;
     private MouseUIController controller;
@@ -11,8 +10,8 @@ public class KnightController : MonoBehaviour
 
     public int max_health = 50;
     private int current_health;
-    public int attack = 5;
-    public float speed = 15;
+    public int attack = 6;
+    public float speed = 10;
     public bool is_attacing = false;
 
     private float zoom = 1f;
@@ -24,10 +23,10 @@ public class KnightController : MonoBehaviour
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         controller = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MouseUIController>();
 
-        target = GameObject.FindGameObjectWithTag("Troll");
+        target = GameObject.FindGameObjectWithTag("Knight");
         if (target == null)
         {
-            DestroyKnight();
+            DestroyTroll();
         }
     }
 
@@ -42,13 +41,13 @@ public class KnightController : MonoBehaviour
 
         if (current_health <= 0)
         {
-            DeathKnight();
+            DeathTroll();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Troll")
+        if (collision.gameObject.tag == "Knight")
         {
             is_attacing = true;
         }
@@ -56,7 +55,7 @@ public class KnightController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Troll")
+        if (collision.gameObject.tag == "Knight")
         {
             is_attacing = true;
         }
@@ -84,13 +83,13 @@ public class KnightController : MonoBehaviour
         current_health -= amount;
     }
 
-    public void DeathKnight()
+    public void DeathTroll()
     {
         gameController.knight_amount--;
-        DestroyKnight();
+        DestroyTroll();
     }
 
-    private void DestroyKnight()
+    private void DestroyTroll()
     {
         Destroy(gameObject, 0f);
     }
