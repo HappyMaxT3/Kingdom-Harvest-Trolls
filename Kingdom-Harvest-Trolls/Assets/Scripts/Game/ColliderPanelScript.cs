@@ -15,10 +15,10 @@ public class ColliderPanelScript : MonoBehaviour
 
     public GameObject checkPanel;
 
-    public GameObject collider;
+    private int width;
+    private int height;
 
-    private int width = 10;
-    private int height = 10;
+    public GameObject collider;
 
     public GameObject[,] checks;
 
@@ -54,7 +54,7 @@ public class ColliderPanelScript : MonoBehaviour
                 checks[i, j].gameObject.GetComponent<ColliderScript>().index_j = j;
             }
     }
-    
+
     private void InitCollider(int i, int j)
     {
         checks[i, j] = Instantiate(collider, Vector3.zero, Quaternion.identity, transform);
@@ -71,6 +71,13 @@ public class ColliderPanelScript : MonoBehaviour
 
     public void ChangeCellTag(int x, int y, string new_tag)
     {
-        checks[x, y].tag = new_tag;
+        if (checks == null)
+        {
+            InitColliders();
+        }
+
+        Debug.Log($"FUCK {width} {height}");
+
+        checks[x, y].gameObject.tag = new_tag;
     }
 }

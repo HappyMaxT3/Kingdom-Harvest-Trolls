@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_health: 50
-  attack: 4
+  attack: 7
   speed: 10
   is_attacing: 0
 --- !u!114 &7891492279844639180

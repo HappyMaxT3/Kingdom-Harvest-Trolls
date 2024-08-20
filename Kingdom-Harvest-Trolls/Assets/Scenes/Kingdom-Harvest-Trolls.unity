@@ -3316,6 +3316,7 @@ MonoBehaviour:
   maxZoom: 7
   zoom: 1
   Panel: {fileID: 148640887}
+  ColliderPanel: {fileID: 2081165338}
 --- !u!114 &582503123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7237,6 +7238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameController: {fileID: 1763886532}
+  checkPanel: {fileID: 2081165338}
+  collider: {fileID: 3667881725286346172, guid: 85c53aa47f1fc7845b48248ef10c3e28, type: 3}
   interval: 60
   width: 20
   height: 10
@@ -10889,7 +10892,6 @@ GameObject:
   - component: {fileID: 2081165342}
   - component: {fileID: 2081165341}
   - component: {fileID: 2081165340}
-  - component: {fileID: 2081165344}
   m_Layer: 5
   m_Name: CheckPanel
   m_TagString: Untagged
@@ -11007,22 +11009,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081165338}
   m_CullTransparentMesh: 1
---- !u!114 &2081165344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081165338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6fb209e86db8d40b74fada51d359fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameController: {fileID: 1763886532}
-  Field: {fileID: 1602255457}
-  checkPanel: {fileID: 2081165338}
-  collider: {fileID: 3667881725286346172, guid: 85c53aa47f1fc7845b48248ef10c3e28, type: 3}
 --- !u!1001 &2089942516
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class MouseUIController : MonoBehaviour
     public float zoom = 1f;
 
     public GameObject Panel;
+    public GameObject ColliderPanel;
 
     private Vector3 startPosition;
     private Vector3 cursorPosition;
@@ -36,6 +37,7 @@ public class MouseUIController : MonoBehaviour
         zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
         //GetComponent<CanvasScaler>().scaleFactor = zoom;
         Panel.GetComponent<RectTransform>().localScale = new Vector3(zoom, zoom, 1);
+        //ColliderPanel.GetComponent<RectTransform>().localScale = new Vector3(zoom, zoom, 1);
 
         startPosition = Input.mousePosition;
 
@@ -70,6 +72,7 @@ public class MouseUIController : MonoBehaviour
             Input.mousePosition.y - startPosition.y + Panel.transform.position.y,
             0
         );
+        //ColliderPanel.transform.position = Panel.transform.position;
         startPosition = Input.mousePosition;
     }
 
@@ -87,7 +90,7 @@ public class MouseUIController : MonoBehaviour
         Vector3 panelPosition = Panel.transform.position;
 
         // ѕровер€ем, выходит ли центр Canvas за пределы Panel
-        if (Mathf.Abs(canvasCenter.x - panelPosition.x) > panelRectTransform.rect.width * zoom / 2) 
+        if (Mathf.Abs(canvasCenter.x - panelPosition.x) > panelRectTransform.rect.width * zoom / 2)
         {
             float new_x = Mathf.Abs(canvasCenter.x - panelPosition.x) - panelRectTransform.rect.width * zoom / 2;
             new_x *= (canvasCenter.x - panelPosition.x > 0) ? (1) : (-1);
@@ -96,6 +99,7 @@ public class MouseUIController : MonoBehaviour
                 Panel.transform.position.y,
                 0
             );
+            //ColliderPanel.transform.position = Panel.transform.position;
         }
         if (Mathf.Abs(canvasCenter.y - panelPosition.y) > panelRectTransform.rect.height * zoom / 2)
         {
@@ -106,6 +110,7 @@ public class MouseUIController : MonoBehaviour
                 Panel.transform.position.y + new_y,
                 0
             );
+            //ColliderPanel.transform.position = Panel.transform.position;
         }
     }
 }

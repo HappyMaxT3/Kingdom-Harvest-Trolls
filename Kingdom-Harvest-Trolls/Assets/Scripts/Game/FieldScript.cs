@@ -12,6 +12,11 @@ public class FieldScript : MonoBehaviour
 
     private CellsScript cellsScript;
 
+    public GameObject checkPanel;
+    public GameObject collider;
+
+    public GameObject[,] checks;
+
     public float interval = 60f;
 
     const int INF = 1000;
@@ -48,6 +53,7 @@ public class FieldScript : MonoBehaviour
         Vector2 cellSize = panel.GetComponent<GridLayoutGroup>().cellSize;
         panel.GetComponent<RectTransform>().sizeDelta = new Vector2(cellSize.x * width, cellSize.y * height);
         zoomPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(cellSize.x * width, cellSize.y * height);
+        checkPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(cellSize.x * width, cellSize.y * height);
 
         StartNewGame();
 
@@ -108,13 +114,19 @@ public class FieldScript : MonoBehaviour
     {
         dark_cells = new GameObject[height, width];
         cells = new Cell[height, width];
+        checks = new GameObject[height, width];
 
         for (int i = 0; i < height; i++)
             for (int j = 0; j < width; j++)
             {
                 InitDarkCell(i, j);
+
                 dark_cells[i, j].gameObject.GetComponent<AddCellScript>().index_i = i;
                 dark_cells[i, j].gameObject.GetComponent<AddCellScript>().index_j = j;
+
+
+                checks[i, j].gameObject.GetComponent<ColliderScript>().index_i = i;
+                checks[i, j].gameObject.GetComponent<ColliderScript>().index_j = j;
             }
 
         PlaceRandomCastle();
@@ -137,22 +149,22 @@ public class FieldScript : MonoBehaviour
         Cell cell = FindCellByType("castle", 0, 1, false);
         cells[castle_x, castle_y] = cell;
         dark_cells[castle_x, castle_y].GetComponent<Image>().sprite = cell.sprite;
-        colliders.ChangeCellTag(castle_x, castle_y, "Knight");
+        ChangeCellTag(castle_x, castle_y, "Knight");
 
         cell = FindCellByType("quater_village", 0, 0, false);
         cells[castle_x, castle_y + 1] = cell;
         dark_cells[castle_x, castle_y + 1].GetComponent<Image>().sprite = cell.sprite;
-        colliders.ChangeCellTag(castle_x, castle_y + 1, "Knight");
+        ChangeCellTag(castle_x, castle_y + 1, "Knight");
 
         cell = FindCellByType("quater_village", 0, 2, false);
         cells[castle_x - 1, castle_y] = cell;
         dark_cells[castle_x - 1, castle_y].GetComponent<Image>().sprite = cell.sprite;
-        colliders.ChangeCellTag(castle_x - 1, castle_y, "Knight");
+        ChangeCellTag(castle_x - 1, castle_y, "Knight");
 
         cell = FindCellByType("wheat", 0, 0, false);
         cells[castle_x, castle_y - 1] = cell;
         dark_cells[castle_x, castle_y - 1].GetComponent<Image>().sprite = cell.sprite;
-        colliders.ChangeCellTag(castle_x, castle_y - 1, "Knight");
+        ChangeCellTag(castle_x, castle_y - 1, "Knight");
 
         cell = FindCellByType("road", 0, 4, false);
         cells[castle_x + 1, castle_y] = cell;
@@ -174,6 +186,18 @@ public class FieldScript : MonoBehaviour
         dark_cells[i, j].GetComponent<Image>().sprite = cellsScript.all_cells[index].sprite;
 
         dark_cells[i, j].SetActive(true);
+
+
+        checks[i, j] = Instantiate(collider, Vector3.zero, Quaternion.identity, colliderPanel.transform);
+        rect_transform = checks[i, j].GetComponent<RectTransform>();
+
+        rect_transform.anchorMin = new Vector2(i * 1.0f / width, j * 1.0f / height);
+        rect_transform.anchorMax = new Vector2((i + 1) * 1.0f / width, (j + 1) * 1.0f / height);
+
+        rect_transform.offsetMin = Vector2.zero;
+        rect_transform.offsetMax = Vector2.zero;
+
+        checks[i, j].SetActive(true);
         //Debug.Log($"{dark_cells[i, j].GetComponent<Image>().sprite.name} {i} {j}");
     }
 
@@ -188,6 +212,11 @@ public class FieldScript : MonoBehaviour
                 return cellsScript.all_cells[i];
             }
         return cellsScript.all_cells[0];
+    }
+
+    public void ChangeCellTag(int x, int y, string new_tag)
+    {
+        checks[x, y].gameObject.tag = new_tag;
     }
 
     /*public void UpdateInformation(int x, int y)
