@@ -71,7 +71,9 @@ public class FieldScript : MonoBehaviour
                     if (cells[i, j].type == "wheat")
                     {
                         Cell new_wheat = FindCellByType("wheat", 2, 0, false);
+                        int wheat_amount = cells[i, j].wheat_amount;
                         cells[i, j] = new_wheat;
+                        cells[i, j].wheat_amount = wheat_amount;
                         dark_cells[i, j].GetComponent<Image>().sprite = new_wheat.sprite;
                     }
                 }
@@ -163,6 +165,7 @@ public class FieldScript : MonoBehaviour
         dark_cells[i, j].GetComponent<Image>().sprite = cellsScript.all_cells[index].sprite;
 
         dark_cells[i, j].SetActive(true);
+        //Debug.Log($"{dark_cells[i, j].GetComponent<Image>().sprite.name} {i} {j}");
     }
 
     public Cell FindCellByType(string type, int level, int count_of_road, bool is_destroyed)

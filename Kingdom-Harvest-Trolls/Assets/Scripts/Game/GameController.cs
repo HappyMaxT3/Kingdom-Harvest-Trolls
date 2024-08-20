@@ -143,14 +143,20 @@ public class GameController : MonoBehaviour
         {
             IncreaseCoinAmount(fieldScript.cells[x, y].coin_amount);
             fieldScript.cells[x, y].coin_amount = 0;
-            UpdateClaimPanel();
         }
         if (fieldScript.cells[x, y].wheat_per_time > 0)
         {
             IncreaseWheatAmount(fieldScript.cells[x, y].wheat_amount);
-            fieldScript.cells[x, y].wheat_amount = 0;
-            UpdateClaimPanel();
+
+            if (fieldScript.cells[x, y].wheat_amount > 0)
+            {
+                Cell new_wheat = fieldScript.FindCellByType("wheat", 0, 0, false);
+                UpgrateCellInfo(new_wheat);
+                fieldScript.cells[x, y].wheat_amount = 0;
+            }
         }
+
+        UpdateClaimPanel();
     }
 
     public void UpdateClaimPanel()
@@ -177,9 +183,6 @@ public class GameController : MonoBehaviour
     {
         wheat_amount += amount;
         wheat_amount_text.text = wheat_amount.ToString();
-
-        Cell new_wheat = fieldScript.FindCellByType("wheat", 0, 0, false);
-        UpgrateCellInfo(new_wheat);
     }
 
     public void OpenCellPressedPanel(int index_i, int index_j)
@@ -290,7 +293,7 @@ public class GameController : MonoBehaviour
     }
 
     public void UpdateUpgratePanelInfo()
-    {   
+    {
         UpgrateCastlePanelScript script = UpgrateCastlePanel.GetComponent<UpgrateCastlePanelScript>();
 
         int castle_current_lvl = fieldScript.cells[x, y].level + 1;
@@ -309,7 +312,7 @@ public class GameController : MonoBehaviour
             //KNIGHTS
 
             script.cost.text = cost.ToString();
-        } 
+        }
         else
         {
             script.level_upgrate.text = castle_current_lvl.ToString();
