@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Easy
   m_EditorClassIdentifier: 
   Name: Prince
-  WidthMultiplier: 10
-  HeightMultiplier: 10
+  WidthMultiplier: 1
+  HeightMultiplier: 1

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Medium
   m_EditorClassIdentifier: 
   Name: King
-  WidthMultiplier: 15
-  HeightMultiplier: 15
+  WidthMultiplier: 2
+  HeightMultiplier: 2

@@ -21,8 +21,8 @@ public class FieldScript : MonoBehaviour
 
     const int INF = 1000;
 
-    public int width = 10;
-    public int height = 10;
+    public int width;
+    public int height;
 
     [SerializeField] GameObject panel;
     [SerializeField] GameObject zoomPanel;
@@ -45,6 +45,19 @@ public class FieldScript : MonoBehaviour
 
     private void Start()
     {
+
+        if(DifficultyManager.Instance != null){
+            Debug.Log($"ovhfdsohndiooi111111111 {width} {height}");
+            float widthMultiplier = DifficultyManager.Instance.Difficulty.WidthMultiplier;
+            float heightMultiplier = DifficultyManager.Instance.Difficulty.HeightMultiplier;
+
+            SetWidth(widthMultiplier);
+            
+
+            SetHeight(heightMultiplier);
+            Debug.Log($"ovhfdsohndiooi22222222 {width} {height} {widthMultiplier} {heightMultiplier}");
+        }
+
         gameController = GameController.GetComponent<GameController>();
         colliders = colliderPanel.GetComponent<ColliderPanelScript>();
 
@@ -219,58 +232,16 @@ public class FieldScript : MonoBehaviour
         checks[x, y].tag = new_tag;
     }
 
-    /*public void UpdateInformation(int x, int y)
+    public void SetWidth(float multiplier)
     {
-        foreach (Vector2 coords in castles)
-        {
-            CountCastle(x, y);
-            UpdateVisited();
-        }
+        width *=  (int) multiplier;
+        //widthMultipler = multiplier;
+        Debug.Log("ovhfdsohndiooi");
     }
 
-    public int CountCastle(int x, int y)
+    public void SetHeight(float multiplier)
     {
-        visited[x, y] = true;
-
-        int amount = cells[x, y].amount;
-
-        if (x + 1 < height)
-            if ((cells[x, y].down == "road") || (cells[x, y].down == "village") || (cells[x, y].down == "wheat"))
-                if ((cells[x + 1, y].up == "road") || (cells[x + 1, y].up == "village") || (cells[x + 1, y].up == "wheat"))
-                    if (visited[x + 1, y] == false)
-                    {
-                        amount += CountCastle(x + 1, y);
-                    }
-        if (x - 1 >= 0)
-            if ((cells[x, y].up == "road") || (cells[x, y].up == "village") || (cells[x, y].up == "wheat"))
-                if ((cells[x - 1, y].down == "road") || (cells[x - 1, y].down == "village") || (cells[x - 1, y].down == "wheat"))
-                    if (visited[x - 1, y] == false)
-                    {
-                        amount += CountCastle(x - 1, y);
-                    }
-        if (y + 1 < width)
-            if ((cells[x, y].down == "road") || (cells[x, y].down == "village") || (cells[x, y].down == "wheat"))
-                if ((cells[x, y + 1].up == "road") || (cells[x, y + 1].up == "village") || (cells[x, y + 1].up == "wheat"))
-                    if (visited[x, y + 1] == false)
-                    {
-                        amount += CountCastle(x, y + 1);
-                    }
-        if (y - 1 >= 0)
-            if ((cells[x, y].up == "road") || (cells[x, y].up == "village") || (cells[x, y].up == "wheat"))
-                if ((cells[x, y - 1].down == "road") || (cells[x, y - 1].down == "village") || (cells[x, y - 1].down == "wheat"))
-                    if (visited[x, y - 1] == false)
-                    {
-                        amount += CountCastle(x, y - 1);
-                    }
-        return amount;
+        height *= (int)multiplier;
     }
 
-    public void UpdateVisited()
-    {
-        for (int i = 0; i < height; i++)
-            for (int j = 0; j < width; j++)
-            {
-                visited[i, j] = false;
-            }
-    }*/
 }

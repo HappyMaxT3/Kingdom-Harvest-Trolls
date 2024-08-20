@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Hard
   m_EditorClassIdentifier: 
   Name: Imperor
-  WidthMultiplier: 20
-  HeightMultiplier: 20
+  WidthMultiplier: 3
+  HeightMultiplier: 3
