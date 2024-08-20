@@ -32,7 +32,9 @@ public class GameController : MonoBehaviour
     public GameObject NotOkayPanel;
     public GameObject UpgrateCastlePanel;
     public GameObject BuyKnightsPanel;
-    public GameObject NotEnougthPanel;
+
+    public GameObject Dude;
+    public TextMeshProUGUI dudesText;
 
     public TextMeshProUGUI timer1;
     public TextMeshProUGUI timer2;
@@ -43,6 +45,8 @@ public class GameController : MonoBehaviour
     public Cell new_cell;
 
     private int x, y;
+
+    private string not_enougth = "My lord, you do not have enougth of materials to do the action.";
 
     private void Start()
     {
@@ -56,7 +60,7 @@ public class GameController : MonoBehaviour
         CloseOkayPanel();
         CloseOptionPanel();
         CloseUpgrateCastlePanel();
-        CloseNotEnougthPanel();
+        CloseDude();
 
         IncreaseCoinAmount(0);
         IncreaseWheatAmount(0);
@@ -161,7 +165,7 @@ public class GameController : MonoBehaviour
         if (coin_amount < 0)
         {
             coin_amount = 0;
-            OpenNotEnougthPanel();
+            OpenDude(not_enougth);
         }
         else
         {
@@ -173,6 +177,9 @@ public class GameController : MonoBehaviour
     {
         wheat_amount += amount;
         wheat_amount_text.text = wheat_amount.ToString();
+
+        Cell new_wheat = fieldScript.FindCellByType("wheat", 0, 0, false);
+        UpgrateCellInfo(new_wheat);
     }
 
     public void OpenCellPressedPanel(int index_i, int index_j)
@@ -271,7 +278,7 @@ public class GameController : MonoBehaviour
 
         if (coin_amount - new_castle.cost_of_upgrate < 0)
         {
-            OpenNotEnougthPanel();
+            OpenDude(not_enougth);
         }
         else
         {
@@ -283,7 +290,7 @@ public class GameController : MonoBehaviour
     }
 
     public void UpdateUpgratePanelInfo()
-    {
+    {   
         UpgrateCastlePanelScript script = UpgrateCastlePanel.GetComponent<UpgrateCastlePanelScript>();
 
         int castle_current_lvl = fieldScript.cells[x, y].level + 1;
@@ -302,7 +309,7 @@ public class GameController : MonoBehaviour
             //KNIGHTS
 
             script.cost.text = cost.ToString();
-        }
+        } 
         else
         {
             script.level_upgrate.text = castle_current_lvl.ToString();
@@ -328,14 +335,16 @@ public class GameController : MonoBehaviour
         fieldScript.dark_cells[x, y].GetComponent<Image>().sprite = new_cell.sprite;
     }
 
-    public void OpenNotEnougthPanel()
+    public void OpenDude(string text)
     {
-        NotEnougthPanel.gameObject.SetActive(true);
+        Dude.gameObject.SetActive(true);
+        dudesText.text = text;
     }
 
-    public void CloseNotEnougthPanel()
+    public void CloseDude()
     {
-        NotEnougthPanel.gameObject.SetActive(false);
+        Dude.gameObject.SetActive(false);
+        dudesText.text = "";
     }
 
     private void Timer()

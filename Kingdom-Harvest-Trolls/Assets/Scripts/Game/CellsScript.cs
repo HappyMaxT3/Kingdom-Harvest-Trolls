@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -63,60 +64,60 @@ namespace Game
             is_just_road = _is_just_road;
             rotation = _rotation;
         }
-}
+    }
 
-public class CellsScript : MonoBehaviour
-{
-    public Cell[] all_cells = new Cell[26];
-    public Cell[] choose_cells = new Cell[26];
-
-    public Cell[] cellChoose = new Cell[3];
-
-    System.Random random = new System.Random();
-
-    public Image cell1;
-    public Image cell2;
-    public Image cell3;
-
-    private void Start()
+    public class CellsScript : MonoBehaviour
     {
-        for (int i = 0; i < all_cells.Length; i++)
+        public Cell[] all_cells = new Cell[26];
+        public Cell[] choose_cells;
+
+        public Cell[] cellChoose = new Cell[3];
+
+        System.Random random = new System.Random();
+
+        public Image cell1;
+        public Image cell2;
+        public Image cell3;
+
+        private void Start()
         {
-            choose_cells[i] = all_cells[i % 3];
-            if (!all_cells[i].is_destroyed && all_cells[i].level == 0)
+            for (int i = 0; i < all_cells.Length; i++)
             {
-                choose_cells[i] = all_cells[i];
-                /*
-                    all_cells[i].sprite, 
-                    all_cells[i].type, 
-                    all_cells[i].is_castle, 
-                    all_cells[i].is_destroyed, 
-                    all_cells[i].coin_per_time,
-                    all_cells[i].wheat_per_time, 
-                    all_cells[i].level,
-                    all_cells[i].count_of_road,
-                    all_cells[i].is_just_road
-                */
+                if ((all_cells[i].type != "grass") && (!all_cells[i].is_destroyed && all_cells[i].level == 0))
+                {
+                    System.Array.Resize(ref choose_cells, choose_cells.Length + 1);
+                    choose_cells[choose_cells.Length - 1] = all_cells[i];
+                    /*
+                        all_cells[i].sprite, 
+                        all_cells[i].type, 
+                        all_cells[i].is_castle, 
+                        all_cells[i].is_destroyed, 
+                        all_cells[i].coin_per_time,
+                        all_cells[i].wheat_per_time, 
+                        all_cells[i].level,
+                        all_cells[i].count_of_road,
+                        all_cells[i].is_just_road
+                    */
+                }
+                //Debug.Log(choose_cells[5].type);
             }
-            //Debug.Log(choose_cells[5].type);
 
             RandomCell();
         }
-    }
 
-    public void RandomCell()
-    {
-        for (int i = 0; i < cellChoose.Length; i++)
+        public void RandomCell()
         {
-            cellChoose[i] = choose_cells[random.Next(0, choose_cells.Length)];
-            //Debug.Log(cellChoose[i].type);
-        }
+            for (int i = 0; i < cellChoose.Length; i++)
+            {
+                cellChoose[i] = choose_cells[random.Next(0, choose_cells.Length)];
+                //Debug.Log(cellChoose[i].type);
+            }
 
-        cell1.sprite = cellChoose[0].sprite;
-        cell2.sprite = cellChoose[1].sprite;
-        cell3.sprite = cellChoose[2].sprite;
+            cell1.sprite = cellChoose[0].sprite;
+            cell2.sprite = cellChoose[1].sprite;
+            cell3.sprite = cellChoose[2].sprite;
+        }
     }
-}
 }
 
 

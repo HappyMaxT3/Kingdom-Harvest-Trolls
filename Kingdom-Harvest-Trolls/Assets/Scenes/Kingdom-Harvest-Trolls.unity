@@ -872,7 +872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &243090223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1190,6 +1190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 331025493}
   - component: {fileID: 331025494}
+  - component: {fileID: 331025495}
   m_Layer: 5
   m_Name: Sycophant
   m_TagString: Untagged
@@ -1236,6 +1237,62 @@ MonoBehaviour:
   audioSource: {fileID: 1776164275}
   clip: {fileID: 8300000, guid: cf313738a0ab0bc4892c3805c242a68c, type: 3}
   displayText: Greetings, my king!
+--- !u!114 &331025495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331025492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1763886533}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: CloseDude
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &359150305
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,475 +7365,7 @@ MonoBehaviour:
     count_of_road: 0
     is_just_road: 0
     rotation: 0
-  choose_cells:
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
-  - sprite: {fileID: 0}
-    type: 
-    title: 
-    down: 
-    right: 
-    up: 
-    left: 
-    coin_amount: 0
-    wheat_amount: 0
-    interval: 0
-    is_destroyed: 0
-    cost_of_upgrate: 0
-    coin_per_time: 0
-    wheat_per_time: 0
-    level: 0
-    count_of_road: 0
-    is_just_road: 0
-    rotation: 0
+  choose_cells: []
   cellChoose:
   - sprite: {fileID: 0}
     type: 
@@ -8380,7 +7969,8 @@ MonoBehaviour:
   NotOkayPanel: {fileID: 1490715936}
   UpgrateCastlePanel: {fileID: 1878628376}
   BuyKnightsPanel: {fileID: 1187331653}
-  NotEnougthPanel: {fileID: 243090222}
+  Dude: {fileID: 331025492}
+  dudesText: {fileID: 1371792914}
   timer1: {fileID: 359150308}
   timer2: {fileID: 1559380536}
   image: {fileID: 395586570}

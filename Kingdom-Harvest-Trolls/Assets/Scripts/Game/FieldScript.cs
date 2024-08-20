@@ -47,6 +47,7 @@ public class FieldScript : MonoBehaviour
         StartNewGame();
 
         InvokeRepeating("IncreaseAmount", interval, interval);
+        InvokeRepeating("WheatGrow", interval / 2, interval / 2);
 
         visited = new bool[height, width];
     }
@@ -56,13 +57,41 @@ public class FieldScript : MonoBehaviour
         for (int i = 0; i < height; i++)
             for (int j = 0; j < width; j++)
             {
-                if (cells[i, j].coin_per_time > 0)
+                if (cells[i, j].is_destroyed == false)
                 {
-                    cells[i, j].coin_amount += cells[i, j].coin_per_time;
+                    if (cells[i, j].coin_per_time > 0)
+                    {
+                        cells[i, j].coin_amount += cells[i, j].coin_per_time;
+                    }
+                    if (cells[i, j].wheat_per_time > 0)
+                    {
+                        cells[i, j].wheat_amount += cells[i, j].wheat_per_time;
+                    }
+
+                    if (cells[i, j].type == "wheat")
+                    {
+                        Cell new_wheat = FindCellByType("wheat", 2, 0, false);
+                        cells[i, j] = new_wheat;
+                        dark_cells[i, j].GetComponent<Image>().sprite = new_wheat.sprite;
+                    }
                 }
-                if (cells[i, j].wheat_per_time > 0)
+            }
+        gameController.UpdateClaimPanel();
+    }
+
+    public void WheatGrow()
+    {
+        for (int i = 0; i < height; i++)
+            for (int j = 0; j < width; j++)
+            {
+                if (cells[i, j].is_destroyed == false)
                 {
-                    cells[i, j].wheat_amount += cells[i, j].wheat_per_time;
+                    if ((cells[i, j].type == "wheat") && (cells[i, j].level == 0))
+                    {
+                        Cell new_wheat = FindCellByType("wheat", 1, 0, false);
+                        cells[i, j] = new_wheat;
+                        dark_cells[i, j].GetComponent<Image>().sprite = new_wheat.sprite;
+                    }
                 }
             }
         gameController.UpdateClaimPanel();
@@ -81,7 +110,7 @@ public class FieldScript : MonoBehaviour
                 dark_cells[i, j].gameObject.GetComponent<AddCellScript>().index_j = j;
             }
 
-        PlaceRandonCastle();
+        PlaceRandomCastle();
     }
 
     public void OnCellClick(int i, int j)
@@ -93,7 +122,7 @@ public class FieldScript : MonoBehaviour
         }
     }
 
-    public void PlaceRandonCastle()
+    public void PlaceRandomCastle()
     {
         int castle_x = random.Next(3, height - 3);
         int castle_y = random.Next(3, width - 3);
@@ -129,6 +158,9 @@ public class FieldScript : MonoBehaviour
 
         rect_transform.offsetMin = Vector2.zero;
         rect_transform.offsetMax = Vector2.zero;
+
+        int index = random.Next(0, 3);
+        dark_cells[i, j].GetComponent<Image>().sprite = cellsScript.all_cells[index].sprite;
 
         dark_cells[i, j].SetActive(true);
     }
