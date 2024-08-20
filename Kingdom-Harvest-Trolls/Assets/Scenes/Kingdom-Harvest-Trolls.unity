@@ -7279,8 +7279,8 @@ MonoBehaviour:
   checkPanel: {fileID: 2081165338}
   collider: {fileID: 3667881725286346172, guid: 85c53aa47f1fc7845b48248ef10c3e28, type: 3}
   interval: 60
-  width: 20
-  height: 20
+  width: 10
+  height: 10
   panel: {fileID: 1602255457}
   zoomPanel: {fileID: 148640887}
   colliderPanel: {fileID: 2081165338}
