@@ -1418,6 +1418,9 @@ GameObject:
   m_Component:
   - component: {fileID: 331025493}
   - component: {fileID: 331025494}
+  - component: {fileID: 331025498}
+  - component: {fileID: 331025497}
+  - component: {fileID: 331025496}
   - component: {fileID: 331025495}
   m_Layer: 5
   m_Name: Sycophant
@@ -1439,7 +1442,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1144080625}
-  - {fileID: 1371792913}
   m_Father: {fileID: 582503121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -1519,6 +1521,57 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &331025496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331025492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fbe64bd74d7c24c8a238ff4baad4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 1144080624}
+  textComponent: {fileID: 1371792914}
+  displayDuration: 30
+  displayDelay: 5
+  displayText: 
+--- !u!114 &331025497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331025492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f1acbdbcb85434a833bbc329601e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 1144080624}
+  uiPanel: {fileID: 52726345}
+  textComponent: {fileID: 1371792914}
+  displayDuration: 30
+  displayDelay: 5
+  displayText: 
+--- !u!114 &331025498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331025492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33e0aec1efa5b9408c894edbfab669f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 1144080624}
+  textComponent: {fileID: 1371792914}
+  displayDuration: 30
+  displayText: 
 --- !u!1 &359150305
 GameObject:
   m_ObjectHideFlags: 0
@@ -4902,13 +4955,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1371792913}
   m_Father: {fileID: 331025493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 175, y: 150}
+  m_SizeDelta: {x: 315, y: 245}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1144080626
 MonoBehaviour:
@@ -6157,7 +6211,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 331025493}
+    m_TransformParent: {fileID: 1144080625}
     m_Modifications:
     - target: {fileID: 2408529356119521769, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_Name
@@ -6165,11 +6219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3445300151381691000, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3445300151381691000, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 24
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3445300151381691000, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_VerticalAlignment
@@ -6205,7 +6259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 250
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6229,23 +6283,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -185
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5959880075102915860, guid: 60294717ef315db409a1d00a538f2b3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7665,7 +7719,7 @@ MonoBehaviour:
     cost_of_upgrate: 40
     coin_per_time: 0
     wheat_per_time: 0
-    level: 0
+    level: -1
     count_of_road: 1
     is_just_road: 0
     rotation: 0

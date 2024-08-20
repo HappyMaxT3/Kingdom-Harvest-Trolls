@@ -53,9 +53,7 @@ public class ColliderScript : MonoBehaviour
 
     private void BreakCastle()
     {
-        Cell cell = fieldScript.cells[index_i, index_j];
-
-        Cell new_cell = fieldScript.FindCellByType(cell.type, -1, cell.count_of_road, true);
+        Cell new_cell = fieldScript.FindCellByType("castle", -1, 1, true);
 
         gameController.UpgrateCellInfo(index_i, index_j, new_cell);
     }
