@@ -8,6 +8,7 @@ public class UIControllerTMP : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public float displayDuration;
 
+
     public string displayText = ""; 
 
     void Start()

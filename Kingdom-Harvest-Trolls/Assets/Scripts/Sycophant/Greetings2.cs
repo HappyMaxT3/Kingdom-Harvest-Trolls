@@ -5,16 +5,15 @@ using System.Collections;
 public class UIControllerTMP11 : MonoBehaviour
 {
     public GameObject uiElement;
-    public GameObject uiPanel;
     public TextMeshProUGUI textComponent;
     public float displayDuration;
+
     public float displayDelay;
 
     public string displayText = "";
 
     void Start()
     {
-        uiPanel.SetActive(false);
         StartCoroutine(ShowAndHideUI());
     }
 
@@ -25,7 +24,6 @@ public class UIControllerTMP11 : MonoBehaviour
         if (uiElement != null)
         {
             uiElement.SetActive(true);
-            uiPanel.SetActive(true);
         }
 
         if (textComponent != null)
@@ -39,7 +37,6 @@ public class UIControllerTMP11 : MonoBehaviour
         if (uiElement != null)
         {
             uiElement.SetActive(false);
-            uiPanel.SetActive(false);
         }
 
         if (textComponent != null)
