@@ -6,14 +6,19 @@ using UnityEngine;
 public class KnightController : MonoBehaviour
 {
     private GameObject target;
+    private MouseUIController controller;
 
     public int max_health = 50;
     private int current_health;
     public int attack = 5;
-    public float speed = 20;
+    public float speed = 4;
+
+    private float zoom = 1f;
 
     private void Start()
     {
+        controller = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MouseUIController>();
+
         target = GameObject.FindGameObjectWithTag("Troll");
         if (target == null)
         {
@@ -23,6 +28,7 @@ public class KnightController : MonoBehaviour
 
     private void Update()
     {
+        zoom = controller.zoom;
         Move();
     }
 
@@ -38,7 +44,7 @@ public class KnightController : MonoBehaviour
         direction.Normalize();
 
         // Перемещаем моба
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction * speed * zoom * Time.deltaTime;
     }
 
     private void DestroyKnight()

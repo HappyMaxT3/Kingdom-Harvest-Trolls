@@ -12,7 +12,7 @@ public class MouseUIController : MonoBehaviour
     public float minZoom;
     public float maxZoom;
 
-    float zoom = 1f;
+    public float zoom = 1f;
 
     public GameObject Panel;
 
