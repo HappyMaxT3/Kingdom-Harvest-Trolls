@@ -15,6 +15,7 @@ namespace Game
         {
             fieldScript.SetWidth(DifficultyManager.Instance.Difficulty.WidthMultiplier);
             fieldScript.SetHeight(DifficultyManager.Instance.Difficulty.HeightMultiplier);
+
         }
     }
 }
