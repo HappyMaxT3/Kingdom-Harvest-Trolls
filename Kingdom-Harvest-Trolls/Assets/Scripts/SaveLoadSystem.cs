@@ -12,6 +12,10 @@ namespace Game
         public const string MusicVolumeKey = "MusicVolume";
         public const string SFXVolumeKey = "SFXVolume";
 
+        private static void Start()
+        {
+            PlayerPrefs.Save();
+        }
 
         public static void SaveSound(SoundSettings settings)
         {
@@ -32,6 +36,7 @@ namespace Game
         public static void SaveDifficulty(int difficultyIndex)
         {
             PlayerPrefs.SetInt(DifficultyKey, difficultyIndex);
+            PlayerPrefs.Save();
         }
 
         public static int LoadDifficulty()
