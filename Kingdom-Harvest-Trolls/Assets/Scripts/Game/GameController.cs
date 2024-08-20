@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI knight_amount_text;
 
     [SerializeField] GameObject colliderPanel;
-    private ColliderPanelScript colliders;
 
     FieldScript fieldScript;
     CellsScript cellsScript;
@@ -63,7 +62,6 @@ public class GameController : MonoBehaviour
     {
         fieldScript = Field.GetComponent<FieldScript>();
         cellsScript = Field.GetComponent<CellsScript>();
-        colliders = colliderPanel.GetComponent<ColliderPanelScript>();
 
         CloseBuyKnightsPanel();
         CloseCastleOkayPanel();
@@ -139,7 +137,7 @@ public class GameController : MonoBehaviour
             fieldScript.cells[index_i, index_j] = new_cell;
             if (fieldScript.cells[index_i, index_j].destroyable)
             {
-                colliders.ChangeCellTag(index_i, index_j, "Knight");
+                fieldScript.ChangeCellTag(index_i, index_j, "Knight");
             }
 
             sprite = null;
@@ -242,6 +240,7 @@ public class GameController : MonoBehaviour
 
         if (fieldScript.cells[index_i, index_j].is_destroyed == true)
         {
+            cellPressedPanel.GetComponent<CellPressedPanelScript>().claim_button.gameObject.SetActive(true);
             cellPressedPanel.GetComponent<CellPressedPanelScript>().ShowImage(false);
             OpenNotOkayPanel();
         }
@@ -250,10 +249,12 @@ public class GameController : MonoBehaviour
             cellPressedPanel.GetComponent<CellPressedPanelScript>().ShowImage(true);
             if (fieldScript.cells[index_i, index_j].type == "castle")
             {
+                cellPressedPanel.GetComponent<CellPressedPanelScript>().claim_button.gameObject.SetActive(false);
                 OpenCastleOkayPanel();
             }
             else
             {
+                cellPressedPanel.GetComponent<CellPressedPanelScript>().claim_button.gameObject.SetActive(true);
                 OpenOkayPanel();
             }
         }
@@ -304,6 +305,8 @@ public class GameController : MonoBehaviour
 
     public void OpenOkayPanel()
     {
+        CloseCastleOkayPanel();
+
         OkayPanel.gameObject.SetActive(true);
     }
 
@@ -314,6 +317,9 @@ public class GameController : MonoBehaviour
 
     public void OpenCastleOkayPanel()
     {
+        CloseNotOkayPanel();
+        CloseOkayPanel();
+
         CastleOkayPanel.gameObject.SetActive(true);
     }
 
@@ -324,6 +330,8 @@ public class GameController : MonoBehaviour
 
     public void OpenNotOkayPanel()
     {
+        CloseCastleOkayPanel();
+
         NotOkayPanel.gameObject.SetActive(true);
 
         Cell cell = fieldScript.cells[x, y];
@@ -356,7 +364,7 @@ public class GameController : MonoBehaviour
     public void RepairCell()
     {
         Cell cell = fieldScript.cells[x, y];
-        Cell new_cell = fieldScript.FindCellByType(cell.type, cell.level, cell.count_of_road, false);
+        Cell new_cell = fieldScript.FindCellByType(cell.type, cell.level + (cell.type == "castle" ? 1 : 0), cell.count_of_road, false);
 
         if (coin_amount - new_cell.cost_of_upgrate < 0)
         {
@@ -366,6 +374,8 @@ public class GameController : MonoBehaviour
         {
             IncreaseCoinAmount(-new_cell.cost_of_upgrate);
             UpgrateCellInfo(x, y, new_cell);
+
+            fieldScript.ChangeCellTag(x, y, "Knight");
 
             UpdateUpgratePanelInfo();
         }

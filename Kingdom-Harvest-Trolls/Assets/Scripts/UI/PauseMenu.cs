@@ -42,9 +42,9 @@ namespace Game
         {
             Debug.Log("loaded menu");
             Time.timeScale = 1f;
+            PlayerPrefs.Save();
             SceneManager.LoadScene("MainMenu");
         }
-
     }
 }
 

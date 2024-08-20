@@ -27,7 +27,6 @@ public class FieldScript : MonoBehaviour
     [SerializeField] GameObject panel;
     [SerializeField] GameObject zoomPanel;
     [SerializeField] GameObject colliderPanel;
-    private ColliderPanelScript colliders;
 
     [SerializeField] GameObject dark_cell_prefab;
 
@@ -59,7 +58,6 @@ public class FieldScript : MonoBehaviour
         }
 
         gameController = GameController.GetComponent<GameController>();
-        colliders = colliderPanel.GetComponent<ColliderPanelScript>();
 
         cellsScript = GetComponent<CellsScript>();
 

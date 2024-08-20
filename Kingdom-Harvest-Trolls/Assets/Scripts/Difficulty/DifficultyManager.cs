@@ -36,5 +36,10 @@ namespace Game
         {
             Difficulty = difficulty;
         }
+
+        public void SaveDifficulty()
+        {
+            SaveLoadSystem.SaveDifficulty(_difficulties.IndexOf(Difficulty));
+        }
     }
 }
