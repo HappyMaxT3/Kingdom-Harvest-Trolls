@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI wheat_amount_text;
     public TextMeshProUGUI knight_amount_text;
 
+    [SerializeField] GameObject colliderPanel;
+    private ColliderPanelScript colliders;
+
     FieldScript fieldScript;
     CellsScript cellsScript;
     public GameObject Field;
@@ -59,6 +62,7 @@ public class GameController : MonoBehaviour
     {
         fieldScript = Field.GetComponent<FieldScript>();
         cellsScript = Field.GetComponent<CellsScript>();
+        colliders = colliderPanel.GetComponent<ColliderPanelScript>();
 
         CloseBuyKnightsPanel();
         CloseCastleOkayPanel();
@@ -131,6 +135,10 @@ public class GameController : MonoBehaviour
 
             fieldScript.dark_cells[index_i, index_j] = cell;
             fieldScript.cells[index_i, index_j] = new_cell;
+            if (fieldScript.cells[index_i, index_j].destroyable)
+            {
+                colliders.ChangeCellTag(index_i, index_j, "Knight");
+            }
 
             sprite = null;
             new_cell.rotation = 0;
@@ -186,7 +194,7 @@ public class GameController : MonoBehaviour
             if (fieldScript.cells[x, y].wheat_amount > 0)
             {
                 Cell new_wheat = fieldScript.FindCellByType("wheat", 0, 0, false);
-                UpgrateCellInfo(new_wheat);
+                UpgrateCellInfo(x, y, new_wheat);
                 fieldScript.cells[x, y].wheat_amount = 0;
             }
         }
@@ -344,7 +352,7 @@ public class GameController : MonoBehaviour
         else
         {
             IncreaseCoinAmount(-new_castle.cost_of_upgrate);
-            UpgrateCellInfo(new_castle);
+            UpgrateCellInfo(x, y, new_castle);
 
             UpdateUpgratePanelInfo();
         }
@@ -391,10 +399,10 @@ public class GameController : MonoBehaviour
         UpgrateCastlePanel.gameObject.SetActive(false);
     }
 
-    public void UpgrateCellInfo(Cell new_cell)
+    public void UpgrateCellInfo(int index_i, int index_j, Cell new_cell)
     {
-        fieldScript.cells[x, y] = new_cell;
-        fieldScript.dark_cells[x, y].GetComponent<Image>().sprite = new_cell.sprite;
+        fieldScript.cells[index_i, index_j] = new_cell;
+        fieldScript.dark_cells[index_i, index_j].GetComponent<Image>().sprite = new_cell.sprite;
     }
 
     public void OpenDude(string text)

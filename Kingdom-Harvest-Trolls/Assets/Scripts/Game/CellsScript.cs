@@ -9,6 +9,7 @@ namespace Game
     {
         public Sprite sprite;
         public string type;
+        public bool destroyable;
         public string title;
         public string down;
         public string right;
@@ -29,6 +30,7 @@ namespace Game
 
         public Cell(Sprite _sprite,
                     string _type,
+                    bool _destroyable,
                     string _title,
                     string _down,
                     string _right,
@@ -49,6 +51,7 @@ namespace Game
         {
             sprite = _sprite;
             type = _type;
+            destroyable = _destroyable;
             title = _title;
             down = _down;
             right = _right;

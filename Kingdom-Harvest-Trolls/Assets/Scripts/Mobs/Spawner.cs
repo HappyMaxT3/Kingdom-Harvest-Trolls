@@ -5,37 +5,34 @@ namespace Game
 {
     public class EnemySpawner : MonoBehaviour
     {
-        public GameObject enemyPrefab; 
-        public float spawnInterval = 2f;
-        public Vector2 spawnAreaMin; // ћинимальна€ позици€ спавна (левый нижний угол)
-        public Vector2 spawnAreaMax; // ћаксимальна€ позици€ спавна (правый верхний угол)
+        public GameObject panel;
+        public GameObject spawnPrefab; 
+        public float interval = 2f;
 
-        private float spawnTimer;
+        public GameObject spawnPointDownLeft;
+        public GameObject spawnPointUpRight;
+
+        private Vector3 spawnAreaMin; // ћинимальна€ позици€ спавна (левый нижний угол)
+        private Vector3 spawnAreaMax; // ћаксимальна€ позици€ спавна (правый верхний угол)
 
         void Start()
         {
-            spawnTimer = spawnInterval; 
+            spawnAreaMin = spawnPointDownLeft.transform.position;
+            spawnAreaMax = spawnPointUpRight.transform.position;
+
+            InvokeRepeating("Spawn", interval, interval);
         }
 
-        void Update()
+        private void Spawn()
         {
-            spawnTimer -= Time.deltaTime;
-
-            if (spawnTimer <= 0f)
-            {
-                SpawnEnemy();
-                spawnTimer = spawnInterval; 
-            }
-        }
-
-        private void SpawnEnemy()
-        {
-            Vector2 spawnPosition = new Vector2(
+            Vector3 spawnPosition = new Vector3(
                 Random.Range(spawnAreaMin.x, spawnAreaMax.x),
-                Random.Range(spawnAreaMin.y, spawnAreaMax.y)
+                Random.Range(spawnAreaMin.y, spawnAreaMax.y),
+                0
             );
 
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            GameObject new_spawn = Instantiate(spawnPrefab, panel.transform);
+            new_spawn.transform.position = spawnPosition;
         }
     }
 }

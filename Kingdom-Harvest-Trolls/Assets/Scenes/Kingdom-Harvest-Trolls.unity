@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 148640888}
   - component: {fileID: 148640890}
   - component: {fileID: 148640889}
+  - component: {fileID: 148640891}
   m_Layer: 5
   m_Name: ZoomPanel
   m_TagString: Untagged
@@ -565,9 +566,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2081165339}
   - {fileID: 1602255458}
   - {fileID: 1050204366}
   - {fileID: 2756811939973236958}
+  - {fileID: 1034626156}
+  - {fileID: 231594397}
   m_Father: {fileID: 478393026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -613,6 +617,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148640887}
   m_CullTransparentMesh: 1
+--- !u!114 &148640891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148640887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b6ed719863b2548ababfe41bddc179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 148640887}
+  spawnPrefab: {fileID: 4249792026229104919, guid: 85278652e2b854748a18b1afbd95f2a0, type: 3}
+  interval: 2
+  spawnPointDownLeft: {fileID: 1034626155}
+  spawnPointUpRight: {fileID: 231594396}
 --- !u!1001 &188518181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,6 +1044,41 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!1 &231594396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231594397}
+  m_Layer: 5
+  m_Name: troll_point (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &231594397
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231594396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 148640888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.5, y: -0.5}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &243090222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,6 +4728,41 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaaec83f757a4844c9191fc35a5154c3, type: 3}
+--- !u!1 &1034626155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034626156}
+  m_Layer: 5
+  m_Name: troll_point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1034626156
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034626155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 148640888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1050204366 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1768408459137617359, guid: c7deac0a02e530a4bb0ed0f92f88de43, type: 3}
@@ -7151,6 +7242,7 @@ MonoBehaviour:
   height: 10
   panel: {fileID: 1602255457}
   zoomPanel: {fileID: 148640887}
+  colliderPanel: {fileID: 2081165338}
   dark_cell_prefab: {fileID: 4600592899630422985, guid: c2606a89d75b15141826faababa61ca1, type: 3}
 --- !u!114 &1602255460
 MonoBehaviour:
@@ -7258,6 +7350,7 @@ MonoBehaviour:
   all_cells:
   - sprite: {fileID: -1403521123, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: grass
+    destroyable: 0
     title: Grass field
     down: grass
     right: grass
@@ -7277,6 +7370,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -245696635, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: grass
+    destroyable: 0
     title: Grass field
     down: grass
     right: grass
@@ -7296,6 +7390,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -1951752273, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: grass
+    destroyable: 0
     title: Grass field
     down: grass
     right: grass
@@ -7315,6 +7410,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 1021004755, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: half_village
+    destroyable: 1
     title: Village
     down: grass
     right: village
@@ -7334,6 +7430,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 154368077, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: half_village
+    destroyable: 1
     title: Village
     down: grass
     right: village
@@ -7353,6 +7450,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 2041666101, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: half_village
+    destroyable: 1
     title: Village
     down: road
     right: road
@@ -7372,6 +7470,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -1626971353, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: half_village
+    destroyable: 1
     title: Village
     down: road
     right: road
@@ -7391,6 +7490,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 1759783421, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7410,6 +7510,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 191766238, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7429,6 +7530,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -209909509, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7448,6 +7550,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -1274796333, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7467,6 +7570,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 49876147, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7486,6 +7590,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -795599282, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7505,6 +7610,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 2002643159, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: castle
+    destroyable: 1
     title: Castle
     down: road
     right: castle
@@ -7524,6 +7630,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -23118517, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: quater_village
+    destroyable: 1
     title: Village
     down: grass
     right: grass
@@ -7543,6 +7650,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -517300926, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: quater_village
+    destroyable: 1
     title: Village
     down: grass
     right: grass
@@ -7562,6 +7670,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 510198341, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: quater_village
+    destroyable: 1
     title: Village
     down: village
     right: road
@@ -7581,6 +7690,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -1732615342, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: quater_village
+    destroyable: 1
     title: Village
     down: village
     right: road
@@ -7600,6 +7710,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 1006422492, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: road
+    destroyable: 0
     title: Road
     down: road
     right: road
@@ -7619,6 +7730,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 1417534210, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: road
+    destroyable: 0
     title: Road
     down: grass
     right: road
@@ -7638,6 +7750,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -1169664318, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: road
+    destroyable: 0
     title: Road
     down: grass
     right: grass
@@ -7657,6 +7770,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 964589688, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: road
+    destroyable: 0
     title: Road
     down: grass
     right: road
@@ -7676,6 +7790,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -550783611, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: wheat
+    destroyable: 1
     title: Wheat farm
     down: grass
     right: wheat
@@ -7695,6 +7810,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 1670284822, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: wheat
+    destroyable: 1
     title: Wheat farm
     down: grass
     right: wheat
@@ -7714,6 +7830,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -282866103, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: wheat
+    destroyable: 1
     title: Wheat farm
     down: grass
     right: wheat
@@ -7733,6 +7850,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: -2074874292, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
     type: wheat
+    destroyable: 1
     title: Wheat farm
     down: grass
     right: wheat
@@ -7754,6 +7872,7 @@ MonoBehaviour:
   cellChoose:
   - sprite: {fileID: 0}
     type: 
+    destroyable: 0
     title: 
     down: 
     right: 
@@ -7773,6 +7892,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 0}
     type: 
+    destroyable: 0
     title: 
     down: 
     right: 
@@ -7792,6 +7912,7 @@ MonoBehaviour:
     rotation: 0
   - sprite: {fileID: 0}
     type: 
+    destroyable: 0
     title: 
     down: 
     right: 
@@ -8349,6 +8470,7 @@ MonoBehaviour:
   coin_amount_text: {fileID: 1631038420}
   wheat_amount_text: {fileID: 446670007}
   knight_amount_text: {fileID: 432650956}
+  colliderPanel: {fileID: 2081165338}
   Field: {fileID: 1602255457}
   empty_sprite: {fileID: 21300000, guid: 623064a3593284345b9f4a2d3ad29673, type: 3}
   optionPanel: {fileID: 52726345}
@@ -8369,6 +8491,7 @@ MonoBehaviour:
   new_cell:
     sprite: {fileID: 0}
     type: 
+    destroyable: 0
     title: 
     down: 
     right: 
@@ -10753,6 +10876,153 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070106398}
   m_CullTransparentMesh: 1
+--- !u!1 &2081165338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2081165339}
+  - component: {fileID: 2081165343}
+  - component: {fileID: 2081165342}
+  - component: {fileID: 2081165341}
+  - component: {fileID: 2081165340}
+  - component: {fileID: 2081165344}
+  m_Layer: 5
+  m_Name: CheckPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2081165339
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081165338}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 148640888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 896, y: 448}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2081165340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081165338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 582503122}
+          m_TargetAssemblyTypeName: MouseUIController, Assembly-CSharp
+          m_MethodName: Move
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2081165341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081165338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 64, y: 64}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &2081165342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081165338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 618767427, guid: 66eedb4881f05dc45a8ec69d9c4a14d8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2081165343
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081165338}
+  m_CullTransparentMesh: 1
+--- !u!114 &2081165344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081165338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6fb209e86db8d40b74fada51d359fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameController: {fileID: 1763886532}
+  Field: {fileID: 1602255457}
+  checkPanel: {fileID: 2081165338}
+  collider: {fileID: 3667881725286346172, guid: 85c53aa47f1fc7845b48248ef10c3e28, type: 3}
 --- !u!1001 &2089942516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11426,7 +11696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2181033810476523531, guid: 85278652e2b854748a18b1afbd95f2a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2181033810476523531, guid: 85278652e2b854748a18b1afbd95f2a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

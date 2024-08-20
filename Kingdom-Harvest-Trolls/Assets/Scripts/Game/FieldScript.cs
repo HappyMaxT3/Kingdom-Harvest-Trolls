@@ -16,11 +16,13 @@ public class FieldScript : MonoBehaviour
 
     const int INF = 1000;
 
-    [SerializeField] int width = 10;
-    [SerializeField] int height = 10;
+    public int width = 10;
+    public int height = 10;
 
     [SerializeField] GameObject panel;
     [SerializeField] GameObject zoomPanel;
+    [SerializeField] GameObject colliderPanel;
+    private ColliderPanelScript colliders;
 
     [SerializeField] GameObject dark_cell_prefab;
 
@@ -39,6 +41,7 @@ public class FieldScript : MonoBehaviour
     private void Start()
     {
         gameController = GameController.GetComponent<GameController>();
+        colliders = colliderPanel.GetComponent<ColliderPanelScript>();
 
         cellsScript = GetComponent<CellsScript>();
 
@@ -134,18 +137,22 @@ public class FieldScript : MonoBehaviour
         Cell cell = FindCellByType("castle", 0, 1, false);
         cells[castle_x, castle_y] = cell;
         dark_cells[castle_x, castle_y].GetComponent<Image>().sprite = cell.sprite;
+        colliders.ChangeCellTag(castle_x, castle_y, "Knight");
 
         cell = FindCellByType("quater_village", 0, 0, false);
         cells[castle_x, castle_y + 1] = cell;
         dark_cells[castle_x, castle_y + 1].GetComponent<Image>().sprite = cell.sprite;
+        colliders.ChangeCellTag(castle_x, castle_y + 1, "Knight");
 
         cell = FindCellByType("quater_village", 0, 2, false);
         cells[castle_x - 1, castle_y] = cell;
         dark_cells[castle_x - 1, castle_y].GetComponent<Image>().sprite = cell.sprite;
+        colliders.ChangeCellTag(castle_x - 1, castle_y, "Knight");
 
         cell = FindCellByType("wheat", 0, 0, false);
         cells[castle_x, castle_y - 1] = cell;
         dark_cells[castle_x, castle_y - 1].GetComponent<Image>().sprite = cell.sprite;
+        colliders.ChangeCellTag(castle_x, castle_y - 1, "Knight");
 
         cell = FindCellByType("road", 0, 4, false);
         cells[castle_x + 1, castle_y] = cell;
@@ -174,8 +181,8 @@ public class FieldScript : MonoBehaviour
     {
         for (int i = 0; i < cellsScript.all_cells.Length; i++)
             if ((cellsScript.all_cells[i].type == type) &&
-                (cellsScript.all_cells[i].level == level) &&
-                (cellsScript.all_cells[i].count_of_road == count_of_road) &&
+                ((level == -10) ? (true) : (cellsScript.all_cells[i].level == level)) &&
+                ((count_of_road == -10) ? (true) : (cellsScript.all_cells[i].count_of_road == count_of_road)) &&
                 (cellsScript.all_cells[i].is_destroyed == is_destroyed))
             {
                 return cellsScript.all_cells[i];

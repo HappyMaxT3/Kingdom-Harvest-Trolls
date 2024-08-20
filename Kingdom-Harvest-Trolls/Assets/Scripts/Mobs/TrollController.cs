@@ -16,22 +16,20 @@ public class TrollController : MonoBehaviour
 
     private float zoom = 1f;
 
+    private bool is_flipped = false;
+
     private void Start()
     {
         current_health = max_health;
 
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         controller = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MouseUIController>();
-
-        target = GameObject.FindGameObjectWithTag("Knight");
-        if (target == null)
-        {
-            DestroyTroll();
-        }
     }
 
     private void Update()
     {
+        target = GameObject.FindGameObjectWithTag("Knight");
+
         zoom = controller.zoom;
 
         if (is_attacing == false)
@@ -47,6 +45,7 @@ public class TrollController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("COLLISION");
         if (collision.gameObject.tag == "Knight")
         {
             is_attacing = true;
@@ -73,9 +72,25 @@ public class TrollController : MonoBehaviour
 
         Vector3 direction = target.transform.position - transform.position;
 
+        if ((direction.x < 0) && (is_flipped == false))
+        {
+            Flip();
+        }
+        if ((direction.x > 0) && (is_flipped == true))
+        {
+            Flip();
+        }
+
         direction.Normalize();
 
         transform.position += direction * speed * zoom * Time.deltaTime;
+    }
+
+    public void Flip()
+    {
+        Vector3 scale = gameObject.transform.localScale;
+        gameObject.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
+        is_flipped = !is_flipped;
     }
 
     public void TakeDamage(int amount)
