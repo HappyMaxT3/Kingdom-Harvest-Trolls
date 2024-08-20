@@ -30,6 +30,12 @@ public class TrollController : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Knight");
 
+        if (target == null)
+        {
+            gameController.ShowLosePanel();
+            return;
+        }
+
         zoom = controller.zoom;
 
         if (is_attacing == false)

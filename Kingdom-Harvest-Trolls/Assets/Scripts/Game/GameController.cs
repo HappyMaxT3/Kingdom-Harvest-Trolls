@@ -42,6 +42,9 @@ public class GameController : MonoBehaviour
     public GameObject UpgrateCastlePanel;
     public GameObject BuyKnightsPanel;
 
+    public GameObject WinPanel;
+    public GameObject LosePanel;
+
     public GameObject Dude;
     public TextMeshProUGUI dudesText;
 
@@ -58,10 +61,17 @@ public class GameController : MonoBehaviour
     private string not_enougth = "My lord, you do not have enougth of materials to do the action.";
     private string greeting = "Greetings, my king!";
 
+    private bool is_win = false;
+    private bool is_lose = false;
+
+    public int free_cells_amount;
+
     private void Start()
     {
         fieldScript = Field.GetComponent<FieldScript>();
         cellsScript = Field.GetComponent<CellsScript>();
+
+        free_cells_amount = fieldScript.width * fieldScript.height - 4;
 
         CloseBuyKnightsPanel();
         CloseCastleOkayPanel();
@@ -71,6 +81,9 @@ public class GameController : MonoBehaviour
         CloseOptionPanel();
         CloseUpgrateCastlePanel();
         CloseDude();
+
+        WinPanel.gameObject.SetActive(false);
+        LosePanel.gameObject.SetActive(false);
 
         OpenDude(greeting);
 
@@ -127,6 +140,8 @@ public class GameController : MonoBehaviour
         y = index_j;
         if ((sprite != null) && (fieldScript.cells[index_i, index_j].title == null))
         {
+            free_cells_amount--;
+
             Debug.Log("CLICK");
             cell.GetComponent<Image>().sprite = sprite;
             cell.GetComponent<Image>().transform.localEulerAngles = new Vector3(0, 0, 90 * new_cell.rotation);
@@ -148,6 +163,11 @@ public class GameController : MonoBehaviour
             ClosingOfBuyingANewCell(true);
 
             cellsScript.RandomCell();
+
+            if (free_cells_amount == 0)
+            {
+                ShowWinPanel();
+            }
         }
         else if (sprite == null)
         {
@@ -456,6 +476,16 @@ public class GameController : MonoBehaviour
     {
         Dude.gameObject.SetActive(false);
         dudesText.text = "";
+    }
+
+    public void ShowWinPanel()
+    {
+        WinPanel.gameObject.SetActive(true);
+    }
+
+    public void ShowLosePanel()
+    {
+        LosePanel.gameObject.SetActive(true);
     }
 
     private void Timer()
