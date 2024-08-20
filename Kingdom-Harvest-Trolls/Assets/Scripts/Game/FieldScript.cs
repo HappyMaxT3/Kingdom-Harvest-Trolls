@@ -20,6 +20,7 @@ public class FieldScript : MonoBehaviour
     [SerializeField] int height = 10;
 
     [SerializeField] GameObject panel;
+    [SerializeField] GameObject zoomPanel;
 
     [SerializeField] GameObject dark_cell_prefab;
 
@@ -43,6 +44,7 @@ public class FieldScript : MonoBehaviour
 
         Vector2 cellSize = panel.GetComponent<GridLayoutGroup>().cellSize;
         panel.GetComponent<RectTransform>().sizeDelta = new Vector2(cellSize.x * width, cellSize.y * height);
+        zoomPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(cellSize.x * width, cellSize.y * height);
 
         StartNewGame();
 
