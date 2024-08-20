@@ -1425,7 +1425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &331025493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1462,8 +1462,6 @@ MonoBehaviour:
   uiElement: {fileID: 1144080624}
   textComponent: {fileID: 1371792914}
   displayDuration: 30
-  audioSource: {fileID: 1776164275}
-  clip: {fileID: 8300000, guid: cf313738a0ab0bc4892c3805c242a68c, type: 3}
   displayText: Greetings, my king!
 --- !u!114 &331025495
 MonoBehaviour:
@@ -7282,7 +7280,7 @@ MonoBehaviour:
   collider: {fileID: 3667881725286346172, guid: 85c53aa47f1fc7845b48248ef10c3e28, type: 3}
   interval: 60
   width: 20
-  height: 10
+  height: 20
   panel: {fileID: 1602255457}
   zoomPanel: {fileID: 148640887}
   colliderPanel: {fileID: 2081165338}
