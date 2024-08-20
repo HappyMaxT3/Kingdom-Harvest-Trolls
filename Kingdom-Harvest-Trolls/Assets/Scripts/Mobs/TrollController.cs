@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrollController : MonoBehaviour
 {
-    private GameObject target;
+    public GameObject target;
     private MouseUIController controller;
     GameController gameController;
 

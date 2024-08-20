@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     FieldScript fieldScript;
     CellsScript cellsScript;
     public GameObject Field;
+    public GameObject Zoom;
 
     Sprite sprite = null;
     public Sprite empty_sprite;
@@ -80,6 +81,7 @@ public class GameController : MonoBehaviour
 
         IncreaseCoinAmount(0);
         IncreaseWheatAmount(0);
+        IncreaseKnightAmount(0);
 
         sec_0_60 = 60;
         InvokeRepeating("Timer", 1f, 1f);
@@ -269,6 +271,11 @@ public class GameController : MonoBehaviour
             IncreaseWheatAmount(-knights.cost_wheat);
 
             IncreaseKnightAmount(knights.knights_amount);
+
+            for (int i = 0; i < knights.knights_amount; i++)
+            {
+                Zoom.GetComponent<EnemySpawner>().KnightSpawn();
+            }
         }
     }
 

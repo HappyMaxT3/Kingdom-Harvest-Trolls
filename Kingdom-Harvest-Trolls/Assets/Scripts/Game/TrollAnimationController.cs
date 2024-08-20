@@ -22,7 +22,7 @@ public class TrollAnimationController : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetFloat("velocity", Mathf.Abs(_body.velocity.x) + Mathf.Abs(_body.velocity.y));
+        _animator.SetFloat("velocity", ((trollController.target == null) || (trollController.is_attacing == true)) ? (0) : (1));
         _animator.SetBool("is_attacking", trollController.is_attacing);
     }
 }

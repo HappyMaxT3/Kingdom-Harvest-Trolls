@@ -22,7 +22,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetFloat("velocity", Mathf.Abs(_body.velocity.x) + Mathf.Abs(_body.velocity.y));
+        _animator.SetFloat("velocity", ((knightController.target == null) || (knightController.is_attacing == true)) ? (0) : (1));
         _animator.SetBool("is_attacking", knightController.is_attacing);
     }
 }

@@ -216,7 +216,7 @@ public class FieldScript : MonoBehaviour
 
     public void ChangeCellTag(int x, int y, string new_tag)
     {
-        checks[x, y].gameObject.tag = new_tag;
+        checks[x, y].tag = new_tag;
     }
 
     /*public void UpdateInformation(int x, int y)
