@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,5 +41,11 @@ public class CellPressedPanelScript : MonoBehaviour
             image.GetComponent<Image>().sprite = wheat;
             amount.text = cell.wheat_amount.ToString();
         }
+    }
+
+    public void ShowImage(bool IF)
+    {
+        image.gameObject.SetActive(IF);
+        amount.gameObject.SetActive(IF);
     }
 }

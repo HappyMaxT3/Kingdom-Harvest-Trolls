@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8872580586912979062}
   m_Layer: 5
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Knight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56957f5a9975bc146845af02cdfa8b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   max_health: 50
   attack: 5
   speed: 15

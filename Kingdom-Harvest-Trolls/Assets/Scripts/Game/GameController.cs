@@ -154,7 +154,7 @@ public class GameController : MonoBehaviour
         else if (sprite == null)
         {
             fieldScript.OnCellClick(index_i, index_j);
-            if ((fieldScript.cells[index_i, index_j].coin_per_time > 0) || (fieldScript.cells[index_i, index_j].wheat_per_time > 0))
+            if ((fieldScript.cells[index_i, index_j].coin_per_time > 0) || (fieldScript.cells[index_i, index_j].wheat_per_time > 0) || (fieldScript.cells[index_i, index_j].is_destroyed))
             {
                 OpenCellPressedPanel(index_i, index_j);
                 UpdateClaimPanel();
@@ -242,10 +242,12 @@ public class GameController : MonoBehaviour
 
         if (fieldScript.cells[index_i, index_j].is_destroyed == true)
         {
+            cellPressedPanel.GetComponent<CellPressedPanelScript>().ShowImage(false);
             OpenNotOkayPanel();
         }
         else
         {
+            cellPressedPanel.GetComponent<CellPressedPanelScript>().ShowImage(true);
             if (fieldScript.cells[index_i, index_j].type == "castle")
             {
                 OpenCastleOkayPanel();
@@ -323,6 +325,10 @@ public class GameController : MonoBehaviour
     public void OpenNotOkayPanel()
     {
         NotOkayPanel.gameObject.SetActive(true);
+
+        Cell cell = fieldScript.cells[x, y];
+
+        NotOkayPanel.GetComponent<RepairScript>().repair_cost_text.text = cell.cost_of_upgrate.ToString();
     }
 
     public void CloseNotOkayPanel()
@@ -345,6 +351,24 @@ public class GameController : MonoBehaviour
         UpgrateCastlePanel.gameObject.SetActive(true);
 
         UpdateUpgratePanelInfo();
+    }
+
+    public void RepairCell()
+    {
+        Cell cell = fieldScript.cells[x, y];
+        Cell new_cell = fieldScript.FindCellByType(cell.type, cell.level, cell.count_of_road, false);
+
+        if (coin_amount - new_cell.cost_of_upgrate < 0)
+        {
+            OpenDude(not_enougth);
+        }
+        else
+        {
+            IncreaseCoinAmount(-new_cell.cost_of_upgrate);
+            UpgrateCellInfo(x, y, new_cell);
+
+            UpdateUpgratePanelInfo();
+        }
     }
 
     public void UpgrateCastle()

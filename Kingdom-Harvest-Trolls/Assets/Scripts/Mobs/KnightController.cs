@@ -106,6 +106,7 @@ public class KnightController : MonoBehaviour
 
     private void DestroyKnight()
     {
+        gameController.knight_amount--;
         Destroy(gameObject, 0f);
     }
 }
