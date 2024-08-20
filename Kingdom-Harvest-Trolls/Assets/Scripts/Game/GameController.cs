@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public int wheat_amount;
     public int knight_amount;
 
+    public int cost_of_new_cell = 200;
+
     public TextMeshProUGUI coin_amount_text;
     public TextMeshProUGUI wheat_amount_text;
     public TextMeshProUGUI knight_amount_text;
@@ -26,6 +28,10 @@ public class GameController : MonoBehaviour
 
     public GameObject optionPanel;
     public GameObject cellPressedPanel;
+
+    public Button buyNewCell;
+    public TextMeshProUGUI costOfCell;
+    public GameObject costOfCellPanel;
 
     public GameObject OkayPanel;
     public GameObject CastleOkayPanel;
@@ -47,6 +53,7 @@ public class GameController : MonoBehaviour
     private int x, y;
 
     private string not_enougth = "My lord, you do not have enougth of materials to do the action.";
+    private string greeting = "Greetings, my king!";
 
     private void Start()
     {
@@ -61,6 +68,11 @@ public class GameController : MonoBehaviour
         CloseOptionPanel();
         CloseUpgrateCastlePanel();
         CloseDude();
+
+        OpenDude(greeting);
+
+        ClosingOfBuyingANewCell(true);
+        costOfCell.text = cost_of_new_cell.ToString();
 
         IncreaseCoinAmount(0);
         IncreaseWheatAmount(0);
@@ -79,9 +91,30 @@ public class GameController : MonoBehaviour
             if (cellsScript.all_cells[i].sprite == sprite)
             {
                 new_cell = cellsScript.all_cells[i];
+
                 break;
             }
         }
+    }
+
+    public void BuyANewCell()
+    {
+        if (coin_amount - cost_of_new_cell < 0)
+        {
+            OpenDude(not_enougth);
+        }
+        else
+        {
+            IncreaseCoinAmount(-cost_of_new_cell);
+
+            ClosingOfBuyingANewCell(false);
+        }
+    }
+
+    public void ClosingOfBuyingANewCell(bool IF)
+    {
+        buyNewCell.gameObject.SetActive(IF);
+        costOfCellPanel.gameObject.SetActive(IF);
     }
 
     public void FieldCellOnClick(GameObject cell, int index_i, int index_j)
@@ -103,6 +136,8 @@ public class GameController : MonoBehaviour
             new_cell.rotation = 0;
             image.sprite = empty_sprite;
             image.transform.localEulerAngles = new Vector3(0, 0, 0);
+
+            ClosingOfBuyingANewCell(true);
 
             cellsScript.RandomCell();
         }
@@ -185,6 +220,12 @@ public class GameController : MonoBehaviour
         wheat_amount_text.text = wheat_amount.ToString();
     }
 
+    public void IncreaseKnightAmount(int amount)
+    {
+        knight_amount += amount;
+        knight_amount_text.text = knight_amount.ToString();
+    }
+
     public void OpenCellPressedPanel(int index_i, int index_j)
     {
         cellPressedPanel.gameObject.SetActive(true);
@@ -203,6 +244,23 @@ public class GameController : MonoBehaviour
             {
                 OpenOkayPanel();
             }
+        }
+    }
+
+    public void BuyKnights()
+    {
+        BuyKnightsPanelScript knights = BuyKnightsPanel.GetComponent<BuyKnightsPanelScript>();
+
+        if ((coin_amount - knights.cost_coins < 0) || (wheat_amount - knights.cost_wheat < 0))
+        {
+            OpenDude(not_enougth);
+        }
+        else
+        {
+            IncreaseCoinAmount(-knights.cost_coins);
+            IncreaseWheatAmount(-knights.cost_wheat);
+
+            IncreaseKnightAmount(knights.knights_amount);
         }
     }
 
@@ -298,18 +356,19 @@ public class GameController : MonoBehaviour
 
         int castle_current_lvl = fieldScript.cells[x, y].level + 1;
         int current_coin_per_time = fieldScript.cells[x, y].coin_per_time;
+        int current_knight_amount = fieldScript.cells[x, y].knight_amount;
         Cell new_castle = fieldScript.FindCellByType("castle", castle_current_lvl, 1, false);
         int cost = new_castle.cost_of_upgrate;
 
         if (fieldScript.cells[x, y].level < 2)
         {
-
             script.level_upgrate.text = castle_current_lvl.ToString() + " -> " + (castle_current_lvl + 1).ToString();
 
-            int next_coin_per_time = fieldScript.FindCellByType("castle", castle_current_lvl, 1, false).coin_per_time;
+            int next_coin_per_time = new_castle.coin_per_time;
             script.coin_upgrate.text = current_coin_per_time.ToString() + " -> " + next_coin_per_time.ToString();
 
-            //KNIGHTS
+            int knight_amount = new_castle.knight_amount;
+            script.knight_upgrate.text = current_knight_amount.ToString() + " -> " + knight_amount.ToString();
 
             script.cost.text = cost.ToString();
         }
@@ -319,7 +378,7 @@ public class GameController : MonoBehaviour
 
             script.coin_upgrate.text = current_coin_per_time.ToString();
 
-            //KNIGHTS
+            script.knight_upgrate.text = current_knight_amount.ToString();
 
             script.cost.text = cost.ToString();
 
@@ -340,8 +399,8 @@ public class GameController : MonoBehaviour
 
     public void OpenDude(string text)
     {
-        Dude.gameObject.SetActive(true);
         dudesText.text = text;
+        Dude.gameObject.SetActive(true);
     }
 
     public void CloseDude()

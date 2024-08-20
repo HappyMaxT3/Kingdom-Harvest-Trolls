@@ -16,6 +16,7 @@ namespace Game
         public string left;
         public int coin_amount;
         public int wheat_amount;
+        public int knight_amount;
         public int interval;
         public bool is_destroyed;
         public int cost_of_upgrate;
@@ -35,6 +36,7 @@ namespace Game
                     string _left,
                     int _coin_amount,
                     int _wheat_amount,
+                    int _knight_amount,
                     int _interval,
                     bool _is_destroyed,
                     int _cost_of_upgrate,
@@ -54,6 +56,7 @@ namespace Game
             left = _left;
             coin_amount = _coin_amount;
             wheat_amount = _wheat_amount;
+            knight_amount = _knight_amount;
             interval = _interval;
             is_destroyed = _is_destroyed;
             cost_of_upgrate = _cost_of_upgrate;
