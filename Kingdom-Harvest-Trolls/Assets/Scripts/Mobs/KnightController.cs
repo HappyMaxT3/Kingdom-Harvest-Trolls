@@ -7,16 +7,21 @@ public class KnightController : MonoBehaviour
 {
     private GameObject target;
     private MouseUIController controller;
+    GameController gameController;
 
     public int max_health = 50;
     private int current_health;
     public int attack = 5;
     public float speed = 4;
+    public bool is_attacing = false;
 
     private float zoom = 1f;
 
     private void Start()
     {
+        current_health = max_health;
+
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         controller = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MouseUIController>();
 
         target = GameObject.FindGameObjectWithTag("Troll");
@@ -29,7 +34,29 @@ public class KnightController : MonoBehaviour
     private void Update()
     {
         zoom = controller.zoom;
-        Move();
+
+        if (is_attacing == false)
+        {
+            Move();
+        }
+
+        if (current_health <= 0)
+        {
+            DeathKnight();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Troll")
+        {
+            is_attacing = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        is_attacing = false;
     }
 
     private void Move()
@@ -37,14 +64,17 @@ public class KnightController : MonoBehaviour
         if (target == null)
             return;
 
-        // ¬ычисл€ем направление движени€
         Vector3 direction = target.transform.position - transform.position;
 
-        // Ќормализуем вектор направлени€, чтобы получить единичный вектор
         direction.Normalize();
 
-        // ѕеремещаем моба
         transform.position += direction * speed * zoom * Time.deltaTime;
+    }
+
+    public void DeathKnight()
+    {
+        gameController.knight_amount--;
+        DestroyKnight();
     }
 
     private void DestroyKnight()

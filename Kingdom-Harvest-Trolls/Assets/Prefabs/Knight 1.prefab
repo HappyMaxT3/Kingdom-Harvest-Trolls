@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 6817776610719480134}
   - component: {fileID: -5561073307865356025}
   - component: {fileID: 2793052402350820128}
+  - component: {fileID: 8872580586912979062}
   m_Layer: 5
   m_Name: Knight 1
   m_TagString: Untagged
@@ -242,6 +243,7 @@ MonoBehaviour:
   max_health: 50
   attack: 5
   speed: 4
+  is_attacing: 0
 --- !u!50 &2793052402350820128
 Rigidbody2D:
   serializedVersion: 4
@@ -269,3 +271,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8872580586912979062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047255222761363110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af90b93d2f4f09438fe8c217ed95d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
