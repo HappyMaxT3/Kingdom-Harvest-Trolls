@@ -2,13 +2,14 @@ using TMPro;
 using UnityEngine;
 using System.Collections;
 
-public class UIControllerTMP : MonoBehaviour
+public class UIControllerTMP2 : MonoBehaviour
 {
     public GameObject uiElement;
     public TextMeshProUGUI textComponent;
     public float displayDuration;
+    public float displayDelay;
 
-    public string displayText = ""; 
+    public string displayText = "";
 
     void Start()
     {
@@ -17,6 +18,8 @@ public class UIControllerTMP : MonoBehaviour
 
     private IEnumerator ShowAndHideUI()
     {
+
+        yield return new WaitForSeconds(displayDelay);
         if (uiElement != null)
         {
             uiElement.SetActive(true);
@@ -25,7 +28,7 @@ public class UIControllerTMP : MonoBehaviour
         if (textComponent != null)
         {
             textComponent.text = displayText;
-            textComponent.gameObject.SetActive(true); 
+            textComponent.gameObject.SetActive(true);
         }
 
         yield return new WaitForSeconds(displayDuration);
