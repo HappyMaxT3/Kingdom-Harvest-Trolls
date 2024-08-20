@@ -8579,6 +8579,8 @@ MonoBehaviour:
   NotOkayPanel: {fileID: 1490715936}
   UpgrateCastlePanel: {fileID: 1878628376}
   BuyKnightsPanel: {fileID: 1187331653}
+  WinPanel: {fileID: 1253762080}
+  LosePanel: {fileID: 265666709}
   Dude: {fileID: 331025492}
   dudesText: {fileID: 1371792914}
   timer1: {fileID: 359150308}
@@ -8605,6 +8607,7 @@ MonoBehaviour:
     count_of_road: 0
     is_just_road: 0
     rotation: 0
+  free_cells_amount: 0
 --- !u!4 &1763886534
 Transform:
   m_ObjectHideFlags: 0

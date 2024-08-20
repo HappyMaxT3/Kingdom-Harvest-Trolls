@@ -37,9 +37,6 @@ public class FieldScript : MonoBehaviour
     public Cell[,] cells;
     //bool[,] is_opened;
 
-    Vector2[,] castles;
-    bool[,] visited;
-
     System.Random random = new System.Random();
 
     private void Start()
@@ -70,8 +67,6 @@ public class FieldScript : MonoBehaviour
 
         InvokeRepeating("IncreaseAmount", interval, interval);
         InvokeRepeating("WheatGrow", interval / 2, interval / 2);
-
-        visited = new bool[height, width];
     }
 
     public void IncreaseAmount()
@@ -197,7 +192,6 @@ public class FieldScript : MonoBehaviour
         dark_cells[i, j].GetComponent<Image>().sprite = cellsScript.all_cells[index].sprite;
 
         dark_cells[i, j].SetActive(true);
-
 
         checks[i, j] = Instantiate(collider, Vector3.zero, Quaternion.identity, colliderPanel.transform);
         rect_transform = checks[i, j].GetComponent<RectTransform>();
